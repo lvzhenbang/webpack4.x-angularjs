@@ -32,7 +32,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "start_url": "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/?standalone=true",
+  "start_url": "/?standalone=true",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#3B8070",
