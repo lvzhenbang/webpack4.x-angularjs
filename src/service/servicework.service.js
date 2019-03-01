@@ -17,5 +17,5 @@ export function serviceWorker () {
 }
 
 export function serviceWokerRunBlock(serviceWorker) {
-  serviceWorker.registerWorker('http://localhost:8080/service-worker.js')
+  serviceWorker.registerWorker('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/service-worker.js')
 }

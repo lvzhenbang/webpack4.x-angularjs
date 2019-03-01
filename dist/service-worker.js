@@ -11,11 +11,11 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("http://39.105.223.81:8083/workbox-v3.6.3/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "http://39.105.223.81:8083/workbox-v3.6.3"});
+importScripts("https://lvzhenbang.github.io/webpack4.x-angularjs/dist/workbox-v3.6.3/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/workbox-v3.6.3"});
 
 importScripts(
-  "http://39.105.223.81:8083/precache-manifest.dd72818c45d1cdfd5db4b38dd9edd190.js"
+  "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/precache-manifest.ddd93cafbde726a42219e03f98a933a2.js"
 );
 
 workbox.skipWaiting();
