@@ -1,7 +1,5 @@
 node_modules/
-assets/
 build/
 config/
 src/
 static/
-workbox-v3.6.3/
