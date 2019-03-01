@@ -1,0 +1,39 @@
+<div id="contactus" class="sj_contactus">
+  <div class="sj_second-title">
+    <span> {{ $ctrl.cn_name }} </span>
+    <span> {{ $ctrl.en_name }} </span>
+  </div>
+
+  <div class="sj_wrapper">
+    <!-- tag -->
+    <img class="sj_tag" ng-src="{{ $ctrl.img }}">
+
+    <div class="sj_left">
+      <div class="sj_ct-logo">
+        <img ng-src="{{ $ctrl.company.img }}" alt="{{ $ctrl.company.alt }}">
+        <span> {{ $ctrl.company.name }} </span>
+      </div>
+      <ul class="sj_ct-list">
+        <li class="sj_ct-item" ng-repeat="item in $ctrl.list">
+          <img ng-src="{{ item.img }}">
+          <span> {{ item.text }} </span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="sj_right">
+      <ul class="sj_qr-list">
+        <li class="sj_qr-item" ng-repeat="item in $ctrl.qr_list">
+          <img ng-src="{{ item.img }}" alt="{{ item.alt }}">
+          <div class="sj_qr-des">
+            <span> {{ item.name }} </span>
+            <span> {{ item.qname }} </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<aboutus></aboutus>
+  

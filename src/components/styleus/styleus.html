@@ -1,0 +1,24 @@
+<div class="sj_style-list sj_wrapper">
+  <div class="sj_index-title">
+    <span> {{ $ctrl.cn_name }} </span>
+    <div></div>
+    <span> {{ $ctrl.en_name }} </span>
+  </div>
+
+  <div class="style-list">
+    <div
+      class="style-item"
+      ng-repeat="item in $ctrl.list"
+      ng-style="{{ $ctrl.itemStyle(item.width, item.height) }}">
+      <img
+        class="lazy"
+        ng-src="{{ item.img }}"
+        width="{{ item.width }}"
+        height="{{ item.height }}"
+        data-width="{{ item.width }}"
+        data-height="{{ item.height }}"
+        title="{{ item.title }}">
+      <div class="desc"> {{ item.desc }} </div>
+    </div>
+  </div>
+</div>

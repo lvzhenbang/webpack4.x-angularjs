@@ -1,0 +1,18 @@
+#map {
+  width: 100%;
+}
+
+@media(min-width: 992px) {
+  #map {
+    padding-top: 24.5%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media(max-width: 576px) {
+  #map {
+    padding-top: 36%;
+  }
+}

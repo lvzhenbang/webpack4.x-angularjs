@@ -1,0 +1,102 @@
+<div
+  class="tab-content"
+  ng-class="$ctrl.class">
+  <div class="sj_block-item" ng-repeat="item in $ctrl.data">
+    <div ng-if="item.title">
+      <div class="sj_i-one"> {{ item.title }} </div>
+      <div class="sj_i-two">
+        <div ng-repeat="citem in item.content">
+          <div ng-if="citem.type == 'text'">
+            <p> {{ citem.text }} </p>
+          </div>
+          <div ng-if="citem.type == 'img'">
+            <img 
+              ng-src="{{ citem.src }}"
+              width="{{ citem.width }}"
+              height="{{ citem.height }}">
+          </div>
+          <div ng-if="citem.type == 'form'">
+            <table>
+              <thead>
+                <th ng-repeat="th in citem.th"> {{ th }} </th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="td in citem.td">
+                  <td> {{ td.date }} </td>
+                  <td> {{ td.num }} </td>
+                  <td> {{ td.rate }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div ng-if="citem.type == 'card'">
+            <div class="sj_card">
+              <img ng-src="{{ citem.left.src }}" alt="{{ citem.left.alt }}">
+              <div class="sj_team-desc">
+                <p class="sj_team-name"> {{ citem.right.name }} </p>
+                <p ng-repeat="ptext in citem.right.list">  {{ ptext.text }} </p>
+              </div>
+            </div>
+          </div>
+          <div ng-if="citem.type == 'link'">
+            <div class="sj_link">
+              <span> {{ citem.link.name }} </span>
+              <a href="{{ citem.link.href }}"> {{ citem.link.href }} </a>
+            </div>
+          </div>
+          <div ng-if="citem.type == 'd-title'">
+            <div class="sj_dtitle">
+              <span> {{ citem.title.text }} </span>
+              <span> {{ citem.title.subtext }} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-else>
+      <div ng-repeat="citem in item.content">
+        <div ng-if="citem.type == 'text'">
+          <p> {{ citem.text }} </p>
+        </div>
+        <div ng-if="citem.type == 'img'">
+          <img class="lazy" ng-src="{{ citem.src }}"  width="{{ citem.width }}" height="{{ citem.height }}">
+        </div>
+        <div ng-if="citem.type == 'form'">
+          <table>
+            <thead>
+              <th ng-repeat="th in citem.th"> {{ th }} </th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="td in citem.td">
+                <td> {{ td.date }} </td>
+                <td> {{ td.num }} </td>
+                <td> {{ td.rate }} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div ng-if="citem.type == 'card'">
+          <div class="sj_card">
+            <img ng-src="{{ citem.left.src }}" alt="{{ citem.left.alt }}">
+            <div class="sj_team-desc">
+              <p class="sj_team-name"> {{ citem.right.name }} </p>
+              <p ng-repeat="ptext in citem.right.list">  {{ ptext.text }} </p>
+            </div>
+          </div>
+        </div>
+        <div ng-if="citem.type == 'link'">
+          <div class="sj_link">
+            <span> {{ citem.link.name }} </span>
+            <a href="{{ citem.link.href }}"> {{ citem.link.href }} </a>
+          </div>
+        </div>
+        <div ng-if="citem.type == 'd-title'">
+          <div class="sj_dtitle">
+            <span> {{ citem.title.text }} </span>
+            <span> {{ citem.title.subtext }} </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

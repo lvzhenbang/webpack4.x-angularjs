@@ -1,0 +1,89 @@
+/* 企业风采 */
+.style-list {
+  margin-top: 28px;
+  overflow: hidden;
+}
+
+.style-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.style-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.style-item .desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: #f4f4f4;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.style-item:hover {
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px #ddd;
+}
+
+.style-item:hover img {
+  transform-origin: center center;
+  transform: scale3d(1.25, 1.25, 1.0);
+}
+
+.style-item:hover .desc {
+  background: rgba(29, 32, 136, .8);
+}
+
+
+
+@media(min-width: 992px) {
+  .style-list {  
+    width: 1240px;
+    margin-left: -7px;
+    margin-right: -7px;
+  }
+
+  .style-item {
+    float: left;
+    margin: 0 5px 10px;
+  }
+}
+
+@media(max-width: 991px) {
+  .style-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-right: 20px;
+  }
+  .style-item {
+    flex-grow: 1;
+    height: 420px;
+    margin: 20px 0 0 20px;
+  }
+  .style-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media(max-width: 576px) {
+  .style-item {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 45%;
+  }
+
+  .style-item:hover img {
+    transform: scale3d(1.1, 1.1, 1.0);
+  }
+}
