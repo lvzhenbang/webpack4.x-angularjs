@@ -22,9 +22,14 @@ let shzrModule = angular.module('shzr', [
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'shzr',
       url: '/shzr',
-      component: 'shzr'
+      views: {
+        app: {
+          component: 'shzr'
+        }
+      }
     })
 }])
 .component('shzr', shzrComponent)

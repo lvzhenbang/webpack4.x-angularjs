@@ -8,6 +8,7 @@ let contactusModule = angular.module('contactus', [])
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'contactus',
       url: '/contactus',
       component: 'contactus'

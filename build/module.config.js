@@ -61,7 +61,14 @@ module.exports = function(isDev) {
       {
         include: path.resolve(__dirname, '../assets/base64/'),
         test: /\.(png|jpe?g)$/,
-        use: 'url-loader'
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8912,
+            name: isDev ? '[name].[ext]' : '[name].[hash].[ext]',
+            outputPath: 'assets/imgs/'
+          }
+        }]
       }
     ]
   }

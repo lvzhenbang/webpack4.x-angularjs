@@ -19,6 +19,7 @@
         "regenerator": true, // 解决全局作用域被污染问题 // 默认true
         "useESModules": false // 不使用`@babel/plugin-transform-modules-commonjs`对模块的引入方式进行转换，默认为fasle
       }
-    ]
+    ],
+    "syntax-dynamic-import"
   ]
 }

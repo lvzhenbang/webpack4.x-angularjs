@@ -8,9 +8,15 @@ let newscenterModule = angular.module('newscenter', [])
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'newscenter',
       url: '/newscenter',
-      component: 'newscenter'
+      views: {
+        app: {
+          component: 'newscenter'
+        }
+      }
+      
     });
 }])
 .component('newscenter', newscenterComponent)

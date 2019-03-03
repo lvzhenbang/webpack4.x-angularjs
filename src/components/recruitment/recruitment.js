@@ -8,9 +8,15 @@ let recruitmentModule = angular.module('recruitment', [])
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'recruitment',
       url: '/recruitment',
-      component: 'recruitment'
+      views: {
+        app: {
+          component: 'recruitment'
+        }
+      }
+      
     });
 }])
 .component('recruitment', recruitmentComponent)

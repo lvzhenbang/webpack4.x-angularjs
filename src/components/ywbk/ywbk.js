@@ -29,9 +29,14 @@ let ywbkModule = angular.module('ywbk', [
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'ywbk',
       url: '/ywbk',
-      component: 'ywbk'
+      views: {
+        app: {
+          component: 'ywbk'
+        }
+      }
     });
 }])
 .component('ywbk', ywbkComponent)

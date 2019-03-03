@@ -1,17 +1,22 @@
 export class storageService {
-  constructor(dataService) {
+  constructor(dataService, $q) {
     this.storage = window.localStorage
     this.dataService = dataService
+    this.$q = $q
   }
 
   init(address, name) {
-    if (!this.storage.getItem(name)) {
-      this.dataService.getData(address).then(data => {
-        Object.keys(data).map(key => this.storage.setItem(key, this.toStr(data[key])))
-      })
-    }
-    else {
-      return
+    let _data = this.getValue(name)
+    if (_data) {
+      return this.$q.resolve(_data)
+    } else {
+      return this
+        .dataService
+        .getData(address)
+        .then(data => {
+          this.storage.setItem(name, this.toStr(data))
+          return data
+        })
     }
   }
 
@@ -24,8 +29,8 @@ export class storageService {
   }
 
   getValue(name) {
-    return this.storage.getItem(name)
+    return this.toJson(this.storage.getItem(name))
   }
 }
 
-storageService.$inject = ['dataService']
+storageService.$inject = ['dataService', '$q']

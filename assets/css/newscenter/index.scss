@@ -70,9 +70,14 @@
 }
 
 .sj_news-center .sj_new-item .sj_new-content {
-  padding: 0 2em;
   position: relative;
+
+  padding: 0 2em;
   border-left: 3px solid red;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sj_news-center .sj_new-item .sj_new-content::after {
@@ -94,9 +99,6 @@
 
 .sj_new-item.reverse .sj_new-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   border-right: 4px solid red;
   border-left: 4px solid transparent;

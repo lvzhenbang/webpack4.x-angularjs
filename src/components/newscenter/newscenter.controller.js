@@ -1,13 +1,17 @@
 class Newscenter {
-  constructor($timeout, dataService) {
+  constructor($timeout, dataService, storageService) {
     this.$timeout = $timeout
-    dataService
-      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/newscenter.json')
-      .then(data => {
-        this.cn_name = data.cn_name;
-        this.en_name = data.en_name;
-        this.types = data.types;
-        this.list = data.list;
+
+    let name = 'newscenter', name2 = null
+    let iss = storageService
+
+    iss
+      .init(`data/${name}.json`, name)
+      .then((data) => {
+        this.cn_name = data.cn_name
+        this.en_name = data.en_name
+        this.types = data.types
+        this.list = data.list
       })
   }
 
@@ -45,6 +49,6 @@ class Newscenter {
   }
 }
 
-Newscenter.$inject = ['$timeout', 'dataService'];
+Newscenter.$inject = ['$timeout', 'dataService', 'storageService'];
 
 export default Newscenter;

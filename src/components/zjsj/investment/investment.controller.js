@@ -1,12 +1,18 @@
 class Investment {
-  constructor(dataService) {
-    this.class = "sj_zjsj sj_investment";
-    dataService
-      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/zjsj.json')
-      .then(data => this.data = data.investment)
+  constructor(dataService, storageService) {
+    let name = 'zjsj', name2 = 'investment'
+    let iss = storageService
+
+    this.class = `sj_${name} sj_${name2}`
+
+    iss
+      .init(`data/${name}.json`, name)
+      .then((data) => {
+        this.data = data[name2]
+      })
   }
 }
 
-Investment.$inject = ['dataService']
+Investment.$inject = ['dataService', 'storageService']
 
 export default Investment;

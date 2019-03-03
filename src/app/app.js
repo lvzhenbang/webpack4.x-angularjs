@@ -19,9 +19,18 @@ let appModule = angular.module('app', [
   $locationProvider.hashPrefix('');
 
   $uiRouterProvider
+    .stateRegistry
+    .register({
+      name: 'app',
+      redirectTo: 'index',
+      component: 'app'
+    });
+
+  $uiRouterProvider
     .urlService
     .rules
     .when('', '/index')
+
 }])
 .component('app', appComponent)
 .name;

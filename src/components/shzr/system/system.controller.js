@@ -1,12 +1,18 @@
 class System {
-  constructor(dataService) {
-    this.class = "sj_shzr sj_system";
-    dataService
-      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/shzr.json')
-      .then(data => this.data = data.system)
+  constructor(dataService, storageService) {
+    let name = 'shzr', name2 = 'system'
+    let iss = storageService
+
+    this.class = `sj_${name} sj_${name2}`
+
+    iss
+      .init(`data/${name}.json`, name)
+      .then((data) => {
+        this.data = data[name2]
+      })
   }
 }
 
-System.$inject = ['dataService']
+System.$inject = ['dataService', 'storageService']
 
 export default System

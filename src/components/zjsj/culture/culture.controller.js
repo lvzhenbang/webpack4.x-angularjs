@@ -1,12 +1,15 @@
 class Culture {
-  constructor(dataService) {
+  constructor(dataService, storageService) {
     this.class = "sj_zjsj sj_culture";
-    dataService
-      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/zjsj.json')
-      .then(data => this.data = data.culture)
+    let iss = storageService
+    iss
+      .init('data/zjsj.json', 'zjsj')
+      .then((data) => {
+        this.data = data.culture
+      })
   }
 }
 
-Culture.$inject = ['dataService']
+Culture.$inject = ['dataService', 'storageService']
 
 export default Culture

@@ -8,9 +8,15 @@ let styleusModule = angular.module('styleus', [])
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'stylus',
       url: '/stylus',
-      component: 'stylus'
+      views: {
+        app: {
+          component: 'stylus'
+        }
+      }
+      
     });
 }])
 .component('styleus', styleusComponent)

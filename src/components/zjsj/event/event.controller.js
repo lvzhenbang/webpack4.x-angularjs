@@ -1,12 +1,18 @@
 class Event {
-  constructor(dataService) {
-    this.class = "sj_zjsj sj_event";
-    dataService
-      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/zjsj.json')
-      .then(data => this.data = data.event)
+  constructor(dataService, storageService) {
+    let name = 'zjsj', name2 = 'event'
+    let iss = storageService
+
+    this.class = `sj_${name} sj_${name2}`
+
+    iss
+      .init(`data/${name}.json`, name)
+      .then((data) => {
+        this.data = data[name2]
+      })
   }
 }
 
-Event.$inject = ['dataService']
+Event.$inject = ['dataService', 'storageService']
 
 export default Event

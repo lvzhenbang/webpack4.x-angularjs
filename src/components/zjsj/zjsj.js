@@ -28,9 +28,14 @@ let zjsjModule = angular.module('zjsj', [
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'zjsj',
       url: '/zjsj',
-      component: 'zjsj'
+      views: {
+        app: {
+          component: 'zjsj'
+        }
+      }
     });
 }])
 .component('zjsj', zjsjComponent)

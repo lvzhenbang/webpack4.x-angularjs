@@ -1,11 +1,18 @@
 class Health {
-  constructor(dataService) {
-    this.data = ywbk.health;
-    this.class = "sj_ywbk sj_health";
-    dataService.getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/ywbk.json').then(data => this.data = data.health)
+  constructor(dataService, storageService) {
+    let name = 'ywbk', name2 = 'health'
+    let iss = storageService
+
+    this.class = `sj_${name} sj_${name2}`
+
+    iss
+      .init(`data/${name}.json`, name)
+      .then((data) => {
+        this.data = data[name2]
+      })
   }
 }
 
-Health.$inject = ['dataService']
+Health.$inject = ['dataService', 'storageService']
 
 export default Health

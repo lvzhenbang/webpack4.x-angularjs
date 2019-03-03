@@ -1,5 +1,6 @@
 import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
+import oclazyload from 'oclazyload';
 
 import aboutus from './components/commons/aboutus/aboutus.js';
 import banner from './components/commons/banner/banner.js';
@@ -18,6 +19,7 @@ import zjsj from './components/zjsj/zjsj.js';
 
 let initModule = angular.module('init', [
   uiRouter,
+  oclazyload,
   aboutus,
   banner,
   app,

@@ -23,9 +23,14 @@ let sxyModule = angular.module('sxy', [
   $uiRouterProvider
     .stateRegistry
     .register({
+      parent: 'app',
       name: 'sxy',
       url: '/sxy',
-      component: 'sxy'
+      views: {
+        app: {
+          component: 'sxy'
+        }
+      } 
     })
 }])
 .component('sxy', sxyComponent)
