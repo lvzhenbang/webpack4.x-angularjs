@@ -1,7 +1,7 @@
 class Styleus {
   constructor(dataService) {
     dataService
-      .getData('/data/styleus.json')
+      .getData('data/styleus.json')
       .then(data => {
         this.cn_name = data.cn_name;
         this.en_name = data.en_name;
