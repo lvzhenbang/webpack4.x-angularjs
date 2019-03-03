@@ -1,7 +1,5 @@
-import loadImg from '@utils/load-img.js'
-
 export default {
-  img: loadImg('logo.png'),
+  img: 'assets/imgs/logo.png',
   alt: '圣捷集团',
   nav: [
     {

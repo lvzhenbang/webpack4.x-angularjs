@@ -18,7 +18,7 @@ let plugins = [];
       /* page head */
       title: 'angularjs',
       // meta: nav.meta,
-      favicon: path.resolve(__dirname, '../assets/lib/favicon-144.png'),
+      favicon: path.resolve(__dirname, '../assets/init/favicon-144.png'),
       template: path.join(__dirname, '../index.html'),
       minify: true
     })
@@ -31,15 +31,15 @@ const sprites = require('../config/index.js').sprites;
 for(let sprite of sprites) {
   plugins.push(new SpritesmithPlugin({
     src: {
-      cwd: path.resolve(__dirname, '../assets/imgs/sprites/' + sprite + '/'),
+      cwd: path.resolve(__dirname, '../assets/sprites/' + sprite + '/'),
       glob: '*.png'
     },
     target: {
-      image: path.resolve(__dirname, '../assets/imgs/other/sprites/' + sprite + '-sprite.png'),
+      image: path.resolve(__dirname, '../assets/base64/' + sprite + '-sprite.png'),
       css: path.resolve(__dirname, '../assets/css/' + sprite + '/' + sprite + '-sprite.scss')
     },
     apiOptions: {
-      cssImageRef: '../../imgs/other/sprites/' + sprite + '-sprite.png'
+      cssImageRef: '../../base64/' + sprite + '-sprite.png'
     }
   }))
 }

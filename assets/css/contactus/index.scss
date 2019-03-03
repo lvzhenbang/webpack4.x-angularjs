@@ -1,10 +1,9 @@
-
 @import "@css/path.scss";
 
 .sj_contactus {
   width: 100%;
   min-height: 759px;
-  background: url('#{$img-other}/second/contactus-bg.jpg') no-repeat;
+  background: url('#{$img-base64}/contactus-bg.jpg') no-repeat;
   background-position: center top;
 }
 
@@ -114,7 +113,7 @@
   }
 
   .sj_contactus .sj_left {
-    background: url('#{$img-other}/second/sj_dot.png') right top repeat-y;
+    background: url('#{$img-base64}/sj_dot.png') right top repeat-y;
   }
 
   .sj_ct-logo span { 

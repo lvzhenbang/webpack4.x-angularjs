@@ -1,7 +1,7 @@
 {
-  "name": "multi-page",
-  "version": "1.0.0",
-  "description": "webpack multi page.",
+  "name": "single-page",
+  "version": "2.0",
+  "description": "webpack single page.",
   "main": "",
   "scripts": {
     "dev": "nodemon",
@@ -14,7 +14,8 @@
   },
   "keywords": [
     "webpack",
-    "multi-page"
+    "single-page",
+    "cache nav"
   ],
   "author": "lzb",
   "license": "MIT",

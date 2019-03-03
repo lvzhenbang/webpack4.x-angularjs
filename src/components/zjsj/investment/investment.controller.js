@@ -1,10 +1,10 @@
-import zjsj from '@data/zjsj.js';
-
 class Investment {
-  constructor() {
-    this.data = zjsj.investment;
+  constructor(dataService) {
     this.class = "sj_zjsj sj_investment";
+    dataService.getData('/data/zjsj.json').then(data => this.data = data.investment)
   }
 }
+
+Investment.$inject = ['dataService']
 
 export default Investment;

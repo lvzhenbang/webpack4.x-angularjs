@@ -3,8 +3,8 @@ import controller from './products.controller';
 import '@css/product/index.scss';
 
 let productsComponent = {
-  template,
-  controller
+  bindings: { products: '<' },
+  template
 };
 
 export default productsComponent;

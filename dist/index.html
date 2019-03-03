@@ -12,9 +12,7 @@
       align-items: center;
     }
 
-    .pacman {
-      position: relative;
-    }
+    .pacman { position: relative; }
 
     .pacman>div:first-of-type,
     .pacman>div:nth-of-type(2) {
@@ -31,64 +29,31 @@
     }
 
     @keyframes rotate_pacman_half_up {
-      0%, 100% {
-        transform: rotate(270deg);
-      }
-
-      50% {
-        transform: rotate(360deg);
-      }
+      0%, 100% {  transform: rotate(270deg); }
+      50% { transform: rotate(360deg); }
     }
 
     @keyframes rotate_pacman_half_down {
-      0%, 100% {
-        transform: rotate(90deg);
-      }
-
-      50% {
-        transform: rotate(0);
-      }
+      0%, 100% { transform: rotate(90deg); }
+      50% { transform: rotate(0); }
     }
 
     @keyframes pacman-balls {
-      0% {
-        opacity: 1;
-      }
-
-      75% {
-        opacity: 0.7;
-      }
-
-      76% {
-        opacity: 0.1;
-      }
-
-      100% {
-        opacity: 0.1;
-        transform: translate(-100px, -6.25px);
-      }
+      0% { opacity: 1; }
+      75% {  opacity: 0.7; }
+      76% { opacity: 0.1; }
+      100% { opacity: 0.1; transform: translate(-100px, -6.25px); }
     }
 
-    .pacman>div:nth-child(3) {
-      animation: pacman-balls 1s -.66s infinite linear;
-    }
+    .pacman>div:nth-child(3) { animation: pacman-balls 1s -.66s infinite linear; }
 
-    .pacman>div:nth-child(4) {
-      animation: pacman-balls 1s -.33s infinite linear;
-    }
+    .pacman>div:nth-child(4) { animation: pacman-balls 1s -.33s infinite linear; }
 
-    .pacman>div:nth-child(5) {
-      animation: pacman-balls 1s 0s infinite linear;
-    }
+    .pacman>div:nth-child(5) { animation: pacman-balls 1s 0s infinite linear; }
 
-    .pacman>div:first-of-type {
-      animation: rotate_pacman_half_up .5s 0s infinite;
-    }
+    .pacman>div:first-of-type { animation: rotate_pacman_half_up .5s 0s infinite; }
 
-    .pacman>div:nth-child(2) {
-      margin-top: -50px;
-      animation: rotate_pacman_half_down .5s 0s infinite;
-    }
+    .pacman>div:nth-child(2) { margin-top: -50px; animation: rotate_pacman_half_down .5s 0s infinite; }
 
     .pacman>div:nth-child(3),
     .pacman>div:nth-child(4),
@@ -105,4 +70,4 @@
       left: 70px;
 
       transform: translate(0,-6.25px);
-    }</style><link rel="shortcut icon" href="https://lvzhenbang.github.io/webpack4.x-angularjs/dist/favicon-144.png"><link href="https://lvzhenbang.github.io/webpack4.x-angularjs/dist/assets/css/app.09d47e5ffc8c5b99b719.css" rel="stylesheet"></head><body ng-app="init" ng-strict-di><app><div class="spinner"><div class="pacman"><div></div><div></div><div></div><div></div><div></div></div></div></app><script src="https://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj&s=1"></script><script src="https://lvzhenbang.github.io/webpack4.x-angularjs/dist/assets/js/vendor.c6d2cd71a06a72d3effb.js"></script><script src="https://lvzhenbang.github.io/webpack4.x-angularjs/dist/assets/js/app.09d47e5ffc8c5b99b719.js"></script></body></html>
+    }</style><link rel="shortcut icon" href="favicon-144.png"><link href="assets/css/app.ab8a29fcc4e07f664a25.css" rel="stylesheet"></head><body ng-app="init" ng-strict-di><app><div class="spinner"><div class="pacman"><div></div><div></div><div></div><div></div><div></div></div></div></app><script src="https://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj&s=1"></script><script src="assets/js/vendor.41e397127caf22987f61.js"></script><script src="assets/js/app.ab8a29fcc4e07f664a25.js"></script></body></html>

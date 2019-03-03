@@ -1,8 +1,10 @@
+@import "@css/path.scss";
+
 /* news center */
 .sj_news-center {
   width: 100%;
   height: auto;
-  background: url(../../imgs/other/second/sj_news-bg.jpg) no-repeat;
+  background: url('#{$img-base64}/sj_news-bg.jpg') no-repeat;
   background-position: center top;
 }
 

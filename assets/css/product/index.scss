@@ -1,3 +1,5 @@
+@import "@css/path.scss";
+
 /* LOAD PRODUCT */
 .sj_product-list {
   display: flex;
@@ -91,7 +93,7 @@
   padding-right: 20px;
   font-size: 14px;
   color: #fff;
-  background: url(../../imgs/base64/more.png) center right 0 no-repeat;
+  background: url('#{$img-base64}/more.png') center right 0 no-repeat;
   background-size: 16px 16px;
 }
 

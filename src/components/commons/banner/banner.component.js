@@ -3,6 +3,7 @@ import controller from './banner.controller';
 import '@css/commons/banner.scss';
 
 let bannerComponent = {
+  bindings: { banner: '<'},
   template,
   controller
 };

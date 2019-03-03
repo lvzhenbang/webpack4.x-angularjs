@@ -75,8 +75,14 @@ module.exports = (mode) => {
           }
         }),
         new CopywebpackPlugin([{
-          from: path.join(__dirname, '../assets', 'lib'),
+          from: path.join(__dirname, '../assets', 'init'),
           to: path.join(__dirname, '../dist')
+        }, {
+          from: path.join(__dirname, '../assets', 'imgs'),
+          to: path.join(__dirname, '../dist/assets', 'imgs')
+        }, {
+          from: path.join(__dirname, '..', 'data'),
+          to: path.join(__dirname, '../dist', 'data')
         }]),
         new Workbox.GenerateSW({
           clientsClaim: true,

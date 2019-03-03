@@ -1,12 +1,14 @@
-import newscenter from '@data/newscenter.js';
-
 class Newscenter {
-  constructor($timeout) {
-    this.cn_name = newscenter.cn_name;
-    this.en_name = newscenter.en_name;
-    this.types = newscenter.types;
-    this.list = newscenter.list;
+  constructor($timeout, dataService) {
     this.$timeout = $timeout
+    dataService
+      .getData('/data/newscenter.json')
+      .then(data => {
+        this.cn_name = data.cn_name;
+        this.en_name = data.en_name;
+        this.types = data.types;
+        this.list = data.list;
+      })
   }
 
   isActive(flag) {
@@ -43,6 +45,6 @@ class Newscenter {
   }
 }
 
-Newscenter.$inject = ['$timeout'];
+Newscenter.$inject = ['$timeout', 'dataService'];
 
 export default Newscenter;

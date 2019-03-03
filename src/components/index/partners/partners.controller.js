@@ -1,7 +1,3 @@
-'use strict';
-
-import partners from '@data/partners.js';
-
 class Partners {
   constructor() {
     this.cn_name = partners.cn_name;

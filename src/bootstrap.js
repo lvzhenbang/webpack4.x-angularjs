@@ -34,9 +34,13 @@ let initModule = angular.module('init', [
 
 import { loadingService, loadingRunBlock } from './service/loading.service.js';
 import { serviceWorker, serviceWokerRunBlock } from './service/servicework.service.js';
+import { dataService } from './service/data.service.js';
+import { storageService } from './service/storage.service.js';
 
 initModule.service('loadingService', loadingService);
 initModule.service('serviceWorker', serviceWorker);
+initModule.service('dataService', dataService);
+initModule.service('storageService', storageService);
 
 initModule.run(loadingRunBlock);
 initModule.run(serviceWokerRunBlock)

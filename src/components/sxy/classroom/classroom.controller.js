@@ -1,10 +1,10 @@
-import sxy from '@data/sxy.js'
-
-class classroom {
-  constructor() {
-    this.data = sxy.classroom;
+class Classroom {
+  constructor(dataService) {
     this.class = "sj_sxy sj_classroom";
+    dataService.getData('/data/sxy.json').then(data => this.data = data.classroom)
   }
 }
 
-export default classroom
+Classroom.$inject = ['dataService']
+
+export default Classroom

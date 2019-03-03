@@ -3,8 +3,8 @@ import controller from './partners.controller';
 import '@css/partner/index.scss';
 
 let partnersComponent = {
-  template,
-  controller
+  bindings: { partners: '<' },
+  template
 };
 
 export default partnersComponent;

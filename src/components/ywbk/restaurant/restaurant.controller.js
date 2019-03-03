@@ -1,10 +1,10 @@
-import ywbk from '@data/ywbk.js'
-
 class Restaurant {
-  constructor() {
-    this.data = ywbk.restaurant;
+  constructor(dataService) {
     this.class = "sj_ywbk sj_restaurant";
+    dataService.getData('/data/ywbk.json').then(data => this.data = data.Restaurant)
   }
 }
+
+Restaurant.$inject = ['dataService']
 
 export default Restaurant

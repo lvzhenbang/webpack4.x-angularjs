@@ -1,12 +1,14 @@
-import recruitment from '@data/recruitment.js'
-
 class Recruitment {
-  constructor() {
-    this.cn_name = recruitment.cn_name;
-    this.en_name = recruitment.en_name;
-    this.img = recruitment.img;
-    this.thead = recruitment.thead;
-    this.data = recruitment.data;
+  constructor(dataService) {
+    dataService
+      .getData('/data/recruitment.json')
+      .then(data => {
+        this.cn_name = data.cn_name
+        this.en_name = data.en_name
+        this.img = data.img
+        this.thead = data.thead
+        this.list = data.list
+      })
   }
 
   isActive(index) {
@@ -17,5 +19,7 @@ class Recruitment {
     return index===0 ? { 'display': 'block' } : {}
   }
 }
+
+Recruitment.$inject = ['dataService']
 
 export default Recruitment

@@ -1,15 +1,21 @@
-import data from '@data/sidenav.js';
-
 class Zjsj {
-  constructor() {
-    this.cn_name = data.zjsj.cn_name;
-    this.en_name = data.zjsj.en_name;
-    this.tabs = data.zjsj.tabs;
+  constructor(dataService, storageService) {
+    let iss = storageService
+    iss.init('/data/index.json', 'banner')
+    this.banner = iss.toJson(iss.getValue('banner'))
+
+    iss.init('/data/sidenav.json', 'zjsj')
+    let zjsj = iss.toJson(iss.getValue('zjsj'))
+    this.cn_name = zjsj.cn_name
+    this.en_name = zjsj.en_name
+    this.tabs = zjsj.tabs
   }
 
   isActive(index) {
     return index === 0 ? true : false
   }
 }
+
+Zjsj.$inject = ['dataService', 'storageService']
 
 export default Zjsj

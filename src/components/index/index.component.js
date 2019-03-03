@@ -1,7 +1,9 @@
 import template from './index.html';
+import controller from './index.controller.js';
 
 let indexComponent = {
-  template
+  template,
+  controller
 };
 
 export default indexComponent;

@@ -1,5 +1,6 @@
 import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
+
 import careerComponent from './career.component';
 
 let careerModule = angular.module('shzr.career', [])

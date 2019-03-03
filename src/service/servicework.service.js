@@ -1,6 +1,3 @@
-serviceWorker.$inject = ['$compile', '$rootScope'];
-serviceWokerRunBlock.$inject = ['serviceWorker'];
-
 export function serviceWorker () {
   this.registerWorker = registerWorker
   
@@ -16,6 +13,10 @@ export function serviceWorker () {
   }
 }
 
+serviceWorker.$inject = ['$compile', '$rootScope'];
+
 export function serviceWokerRunBlock(serviceWorker) {
   serviceWorker.registerWorker('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/service-worker.js')
 }
+
+serviceWokerRunBlock.$inject = ['serviceWorker'];

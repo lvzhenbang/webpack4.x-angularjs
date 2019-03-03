@@ -1,12 +1,10 @@
-import loadImg from '@utils/load-img.js';
-
 export default {
   service: {
     phone: '400-075-2005',
     worktime: '9:00-18:00&nsp;&nsp;周一至周五'
   },
   qrcode: {
-    img: loadImg('index/sj-qr.png'),
+    img: 'assets/imgs/index/sj-qr.png',
     alt: '微信公众号二维码',
     text: '扫一扫关注圣捷投资'
   },

@@ -1,10 +1,10 @@
-import shzr from '@data/shzr.js'
-
-class welfare {
-  constructor() {
-    this.data = shzr.welfare;
+class Welfare {
+  constructor(dataService) {
     this.class = "sj_shzr sj_welfare";
+    dataService.getData('/data/shzr.json').then(data => this.data = data.welfare)
   }
 }
 
-export default welfare
+Welfare.$inject = ['dataService']
+
+export default Welfare

@@ -1,12 +1,12 @@
 <div class="about-us sj_wrapper">
   <div class="sj_index-title">
-    <span> {{ $ctrl.cn_name }} </span>
+    <span> {{ $ctrl.aboutus.cn_name }} </span>
     <div></div>
-    <span> {{ $ctrl.en_name }} </span>
+    <span> {{ $ctrl.aboutus.en_name }} </span>
   </div>
 
   <div class="about-list">
-    <div class="about-item" ng-repeat="item in $ctrl.list">
+    <div class="about-item" ng-repeat="item in $ctrl.aboutus.list">
       <div class="icon"></div>
       <div class="desc">{{ item.desc }}</div>
     </div>

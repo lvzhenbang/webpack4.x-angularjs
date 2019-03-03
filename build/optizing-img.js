@@ -13,11 +13,11 @@ for (let name of dir) {
 async function optizieImg(name) {
 	await imagemin(
     [
-      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.jpg'),
-      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.png'),
-      path.resolve(__dirname, '../assets/imgs/static/'+ name +'/*.gif')
+      path.resolve(__dirname, '../static/imgs/'+ name +'/*.jpg'),
+      path.resolve(__dirname, '../static/imgs/'+ name +'/*.png'),
+      path.resolve(__dirname, '../static/imgs/'+ name +'/*.gif')
     ],
-    path.resolve(__dirname, '../assets/imgs/other/'+ name +'/'),
+    path.resolve(__dirname, '../static/imgs/'+ name +'/'),
     {
       use: [
         imageminMozjpeg(),

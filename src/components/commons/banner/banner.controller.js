@@ -1,13 +1,11 @@
-import banner from '@data/banner.js';
-
 class Banner {
-  constructor() {
-    this.banner = banner
-  }
+  constructor() {}
 
   isActive(index) {
     return index === 0 ? true : false
   }
 }
+
+Banner.$inject = ['dataService']
 
 export default Banner;
