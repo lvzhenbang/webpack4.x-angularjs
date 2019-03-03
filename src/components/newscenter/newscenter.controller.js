@@ -2,7 +2,7 @@ class Newscenter {
   constructor($timeout, dataService) {
     this.$timeout = $timeout
     dataService
-      .getData('/data/newscenter.json')
+      .getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/newscenter.json')
       .then(data => {
         this.cn_name = data.cn_name;
         this.en_name = data.en_name;

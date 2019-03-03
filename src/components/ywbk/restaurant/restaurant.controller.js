@@ -1,7 +1,7 @@
 class Restaurant {
   constructor(dataService) {
     this.class = "sj_ywbk sj_restaurant";
-    dataService.getData('/data/ywbk.json').then(data => this.data = data.Restaurant)
+    dataService.getData('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/data/ywbk.json').then(data => this.data = data.Restaurant)
   }
 }
 
