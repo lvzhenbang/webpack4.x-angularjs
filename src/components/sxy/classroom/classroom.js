@@ -7,7 +7,8 @@ let classroomModule = angular.module('sxy.classroom', [])
   $uiRouterProvider
     .stateRegistry
     .register({
-      name: 'sxy.classroom',
+      parent: 'sxy',
+      name: 'classroom',
       url: '/classroom',
       views: {
         'sxy': {

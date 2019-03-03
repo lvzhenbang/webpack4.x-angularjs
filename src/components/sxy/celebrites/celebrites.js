@@ -8,7 +8,8 @@ let celebritesModule = angular.module('sxy.celebrites', [])
   $uiRouterProvider
     .stateRegistry
     .register({
-      name: 'sxy.celebrites',
+      parent: 'sxy',
+      name: 'celebrites',
       url: '/celebrites',
       views: {
         'sxy': {
