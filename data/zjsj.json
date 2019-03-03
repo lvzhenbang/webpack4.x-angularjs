@@ -35,7 +35,7 @@
           "width": "",
           "height": "",
           "alt": "董事长-高伟伟",
-          "src": "leader/高伟伟.png"
+          "src": "assets/imgs/leader/高伟伟.png"
         },
         {
           "type": "text",
@@ -358,7 +358,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/高伟伟.png"
+            "src": "assets/imgs/leader/高伟伟.png"
           },
           "right": {
             "name": "高伟伟",
@@ -396,7 +396,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/尤相举.png"
+            "src": "assets/imgs/leader/尤相举.png"
           },
           "right": {
             "name": "尤相举",
@@ -426,7 +426,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/王正通.png"
+            "src": "assets/imgs/leader/王正通.png"
           },
           "right": {
             "name": "王正通",
@@ -448,7 +448,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/王啸斌.png"
+            "src": "assets/imgs/leader/王啸斌.png"
           },
           "right": {
             "name": "王啸斌",
@@ -478,7 +478,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/刘芳燕.png"
+            "src": "assets/imgs/leader/刘芳燕.png"
           },
           "right": {
             "name": "刘芳燕",
@@ -500,7 +500,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/杨航.png"
+            "src": "assets/imgs/leader/杨航.png"
           },
           "right": {
             "name": "杨航",
@@ -526,7 +526,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/姬亚兰.png"
+            "src": "assets/imgs/leader/姬亚兰.png"
           },
           "right": {
             "name": "姬亚兰",
@@ -548,7 +548,7 @@
             "width": "",
             "height": "",
             "alt": "",
-            "src": "leader/胡文红.png"
+            "src": "assets/imgs/leader/胡文红.png"
           },
           "right": {
             "name": "胡文红",
