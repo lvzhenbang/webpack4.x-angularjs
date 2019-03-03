@@ -36,7 +36,7 @@ let zjsjModule = angular.module('zjsj', [
           component: 'zjsj'
         }
       }
-    });
+    })
 }])
 .component('zjsj', zjsjComponent)
 .name;

@@ -1,6 +1,6 @@
 class Event {
   constructor(dataService, storageService) {
-    let name = 'zjsj', name2 = 'event'
+    let name = 'zjsj', name2 = 'events'
     let iss = storageService
 
     this.class = `sj_${name} sj_${name2}`
