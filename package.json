@@ -1,6 +1,6 @@
 {
   "name": "single-page",
-  "version": "2.0",
+  "branchversion": "2.0",
   "description": "webpack single page of angularjs.",
   "main": "",
   "scripts": {
