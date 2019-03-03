@@ -23,6 +23,10 @@
   left: 50%;
 }
 
+.banner img {
+  width: 100%;
+}
+
 @media(max-width: 576px) {
   .carousel-control {
     display: none;
