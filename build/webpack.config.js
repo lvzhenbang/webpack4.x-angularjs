@@ -15,6 +15,25 @@ let entry = multipage.entry,
 
 module.exports = (mode) => {
   let isDev = mode !== 'production'
+  let basePlugin = [
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].[chunkhash].css'
+    }),
+    new OptimizeCSSAssetsPlugin({
+      cssProcessorOptions: isDev ? {safe: true} :isDev ? {safe: true} : {
+        map: {
+          inline: false
+        },
+        safe: true
+      }
+    }),
+    new Workbox.GenerateSW({
+      importWorkboxFrom: 'local',
+      clientsClaim: true,
+      skipWaiting: true
+    })
+  ].concat(plugins)
+
   return {
     entry: entry,
     mode: mode,
@@ -61,36 +80,18 @@ module.exports = (mode) => {
       }
     }, 
     module: Module(isDev),
-    plugins: plugins.concat(
-      [
-        new MiniCssExtractPlugin({
-          filename: 'assets/css/[name].[chunkhash].css'
-        }),
-        new OptimizeCSSAssetsPlugin({
-          cssProcessorOptions: isDev ? {safe: true} : {
-            map: {
-              inline: false
-            },
-            safe: true
-          }
-        }),
-        new CopywebpackPlugin([{
-          from: path.join(__dirname, '../assets', 'init'),
-          to: path.join(__dirname, '../dist')
-        }, {
-          from: path.join(__dirname, '../assets', 'imgs'),
-          to: path.join(__dirname, '../dist/assets', 'imgs')
-        }, {
-          from: path.join(__dirname, '..', 'data'),
-          to: path.join(__dirname, '../dist', 'data')
-        }]),
-        new Workbox.GenerateSW({
-          clientsClaim: true,
-          skipWaiting: true,
-          importWorkboxFrom: 'local'
-        })
-      ]
-    ),
+    plugins: isDev ? basePlugin : basePlugin.concat([
+      new CopywebpackPlugin([{
+        from: path.join(__dirname, '../assets', 'init'),
+        to: path.join(__dirname, '../dist/assets', 'init')
+      }, {
+        from: path.join(__dirname, '../assets', 'imgs'),
+        to: path.join(__dirname, '../dist/assets', 'imgs')
+      }, {
+        from: path.join(__dirname, '..', 'data'),
+        to: path.join(__dirname, '../dist', 'data')
+      }])
+    ]),
     devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map'
   }
 }

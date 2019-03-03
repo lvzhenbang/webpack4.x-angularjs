@@ -11,7 +11,11 @@ let contactusModule = angular.module('contactus', [])
       parent: 'app',
       name: 'contactus',
       url: '/contactus',
-      component: 'contactus'
+      views: {
+        app: {
+          component: 'contactus'
+        }
+      }
     });
 }])
 .component('contactus', contactusComponent)

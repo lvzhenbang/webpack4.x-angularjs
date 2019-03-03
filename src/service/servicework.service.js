@@ -16,7 +16,7 @@ export function serviceWorker () {
 serviceWorker.$inject = ['$compile', '$rootScope'];
 
 export function serviceWokerRunBlock(serviceWorker) {
-  serviceWorker.registerWorker('https://lvzhenbang.github.io/webpack4.x-angularjs/dist/service-worker.js')
+  serviceWorker.registerWorker('./service-worker.js')
 }
 
 serviceWokerRunBlock.$inject = ['serviceWorker'];

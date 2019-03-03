@@ -1,5 +1,5 @@
 class Recruitment {
-  constructor(dataService) {
+  constructor(dataService, storageService) {
     let name = 'recruitment', name2 = null
     let iss = storageService
 
@@ -23,6 +23,6 @@ class Recruitment {
   }
 }
 
-Recruitment.$inject = ['dataService']
+Recruitment.$inject = ['dataService', 'storageService']
 
 export default Recruitment

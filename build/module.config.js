@@ -8,7 +8,7 @@ module.exports = function(isDev) {
         include: path.resolve(__dirname, '../assets/'),
         test: /\.scss$/,
         use: [
-          isDev? {
+          isDev ? {
             loader: 'style-loader',
             options: { sourceMap: true }
           } : MiniCssExtractPlugin.loader,
@@ -65,8 +65,8 @@ module.exports = function(isDev) {
           loader: 'url-loader',
           options: {
             limit: 8912,
-            name: isDev ? '[name].[ext]' : '[name].[hash].[ext]',
-            outputPath: 'assets/imgs/'
+            name: '[name].[ext]',
+            outputPath: 'assets/imgs/base64/'
           }
         }]
       }
