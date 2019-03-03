@@ -11,7 +11,6 @@
       ng-repeat="item in $ctrl.list"
       ng-style="{{ $ctrl.itemStyle(item.width, item.height) }}">
       <img
-        class="lazy"
         ng-src="{{ item.img }}"
         width="{{ item.width }}"
         height="{{ item.height }}"

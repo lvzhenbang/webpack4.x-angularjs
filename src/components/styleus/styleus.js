@@ -9,11 +9,11 @@ let styleusModule = angular.module('styleus', [])
     .stateRegistry
     .register({
       parent: 'app',
-      name: 'stylus',
-      url: '/stylus',
+      name: 'styleus',
+      url: '/styleus',
       views: {
         app: {
-          component: 'stylus'
+          component: 'styleus'
         }
       }
       

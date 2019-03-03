@@ -3,9 +3,9 @@ class Styleus {
     dataService
       .getData('/data/styleus.json')
       .then(data => {
-        this.cn_name = styleus.cn_name;
-        this.en_name = styleus.en_name;
-        this.list = styleus.list;
+        this.cn_name = data.cn_name;
+        this.en_name = data.en_name;
+        this.list = data.list;
       })
   }
 
