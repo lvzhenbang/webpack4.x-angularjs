@@ -15,7 +15,7 @@ importScripts("https://lvzhenbang.github.io/webpack4.x-angularjs/dist/workbox-v3
 workbox.setConfig({modulePathPrefix: "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/workbox-v3.6.3"});
 
 importScripts(
-  "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/precache-manifest.39535a231e577f00ca8d7a413586fb2a.js"
+  "https://lvzhenbang.github.io/webpack4.x-angularjs/dist/precache-manifest.ecc02759b5fa0f8c5d84fb44eab28090.js"
 );
 
 workbox.skipWaiting();
