@@ -1,50 +1,70 @@
-import * as angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
-import oclazyload from 'oclazyload';
+import * as angular from 'angular'
+import uiRouter from '@uirouter/angularjs'
+// import oclazyload from 'oclazyload'
 
-import aboutus from './components/commons/aboutus/aboutus.js';
-import banner from './components/commons/banner/banner.js';
+// sub Module
+import { appModule } from './modules/app.module'
+import { shzrModule } from './modules/shzr.module'
+import { sxyModule } from './modules/sxy.module'
+import { ywbkModule } from './modules/ywbk.module'
+import { zjsjModule } from './modules/zjsj.module'
 
-import app from './app/app.js';
+// commons component
+import {
+  aboutusComponent,
+  backtopComponent,
+  bannerComponent,
+  footerComponent,
+  headerComponent,
+  mapComponent,
+  partnersComponent,
+  productsComponent
+} from './components/commons'
 
-import contactus from './components/contactus/contactus.js';
-import index from './components/index/index.js';
-import newscenter from './components/newscenter/newscenter.js';
-import recruitment from './components/recruitment/recruitment.js';
-import shzr from './components/shzr/shzr.js';
-import sxy from './components/sxy/sxy.js';
-import styleus from './components/styleus/styleus.js';
-import ywbk from './components/ywbk/ywbk.js';
-import zjsj from './components/zjsj/zjsj.js';
+// dirctive
+import { backtopDirective } from './directives/backtop.directive'
+import { mapDirective } from './directives/map.directive'
+import { carouselDirective } from './directives/carousel.directive'
+import { navfixedDirective } from './directives/navfixed.directive'
 
+// service
+import { loadingService, loadingRunBlock } from './services/loading.service'
+import { serviceWorker, serviceWokerRunBlock } from './services/servicework.service'
+import { dataService } from './services/data.service'
+import { storageService } from './services/storage.service'
+
+// define initModule
 let initModule = angular.module('init', [
   uiRouter,
-  oclazyload,
-  aboutus,
-  banner,
-  app,
-  contactus,
-  index,
-  newscenter,
-  recruitment,
-  shzr,
-  sxy,
-  styleus,
-  ywbk,
-  zjsj
-]);
+  // oclazyload,
+  appModule.name,
+  shzrModule.name,
+  sxyModule.name,
+  ywbkModule.name,
+  zjsjModule.name
+])
 
-import { loadingService, loadingRunBlock } from './service/loading.service.js';
-import { serviceWorker, serviceWokerRunBlock } from './service/servicework.service.js';
-import { dataService } from './service/data.service.js';
-import { storageService } from './service/storage.service.js';
+// register component
+initModule.component('aboutus', aboutusComponent)
+initModule.component('backtop', backtopComponent)
+initModule.component('banner', bannerComponent)
+initModule.component('footer', footerComponent)
+initModule.component('header', headerComponent)
+initModule.component('map', mapComponent)
+initModule.component('partners', partnersComponent)
+initModule.component('products', productsComponent)
 
-initModule.service('loadingService', loadingService);
-initModule.service('serviceWorker', serviceWorker);
-initModule.service('dataService', dataService);
-initModule.service('storageService', storageService);
+// register directive
+initModule.directive('backtop', backtopDirective)
+initModule.directive('map', mapDirective)
+initModule.directive('carousel', carouselDirective)
+initModule.directive('navfixed', navfixedDirective)
 
-initModule.run(loadingRunBlock);
+// register service
+initModule.service('loadingService', loadingService)
+initModule.service('serviceWorker', serviceWorker)
+initModule.service('dataService', dataService)
+initModule.service('storageService', storageService)
+
+initModule.run(loadingRunBlock)
 initModule.run(serviceWokerRunBlock)
-
-export default initModule;
