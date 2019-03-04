@@ -31,9 +31,3 @@ npm run dev
 ```
 npm run build
 ```
-
-## 如何构建多页面应用
-
-
-
-
