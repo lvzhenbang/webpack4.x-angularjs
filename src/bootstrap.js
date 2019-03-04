@@ -1,6 +1,8 @@
 import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import oclazyload from 'oclazyload';
+import { Visualizer } from '@uirouter/visualizer';
+
 
 import aboutus from './components/commons/aboutus/aboutus.js';
 import banner from './components/commons/banner/banner.js';
@@ -47,4 +49,6 @@ initModule.service('storageService', storageService);
 initModule.run(loadingRunBlock);
 initModule.run(serviceWokerRunBlock)
 
-export default initModule;
+initModule.config(['$uiRouterProvider', function($uiRouter) {
+  $uiRouter.plugin(Visualizer)
+}])
