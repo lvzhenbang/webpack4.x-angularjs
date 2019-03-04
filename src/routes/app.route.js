@@ -63,6 +63,12 @@ export const shzrRoute = {
     app: {
       component: 'shzr'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/shzr.module').then(mod => {
+      $ocLazyLoad.load(mod.shzrModule)
+    })
   }
 }
 
@@ -88,7 +94,13 @@ export const sxyRoute = {
     app: {
       component: 'sxy'
     }
-  } 
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/sxy.module').then(mod => {
+      $ocLazyLoad.load(mod.sxyModule)
+    })
+  }
 }
 
 // ywbk
@@ -101,6 +113,12 @@ export const ywbkRoute = {
     app: {
       component: 'ywbk'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/ywbk.module').then(mod => {
+      $ocLazyLoad.load(mod.ywbkModule)
+    })
   }
 }
 
@@ -114,5 +132,11 @@ export const zjsjRoute = {
     app: {
       component: 'zjsj'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/zjsj.module').then(mod => {
+      $ocLazyLoad.load(mod.zjsjModule)
+    })
   }
 }

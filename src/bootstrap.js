@@ -1,6 +1,6 @@
 import * as angular from 'angular'
 import uiRouter from '@uirouter/angularjs'
-// import oclazyload from 'oclazyload'
+import oclazyload from 'oclazyload'
 
 // sub Module
 import { appModule } from './modules/app.module'
@@ -36,7 +36,7 @@ import { storageService } from './services/storage.service'
 // define initModule
 let initModule = angular.module('init', [
   uiRouter,
-  // oclazyload,
+  oclazyload,
   appModule.name,
   shzrModule.name,
   sxyModule.name,
