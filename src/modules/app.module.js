@@ -11,6 +11,7 @@ import {
   newscenterRoute,
   recruitmentRoute,
   shzrRoute,
+  styleusRoute,
   sxyRoute,
   ywbkRoute,
   zjsjRoute
@@ -23,6 +24,7 @@ import indexComponent from '../components/index/index.component'
 import newscenterComponent from '../components/newscenter/newscenter.component'
 import recruitmentComponent from '../components/recruitment/recruitment.component'
 import shzrComponent from '../components/shzr/shzr.component'
+import styleusComponent from '../components/styleus/styleus.component'
 import sxyComponent from '../components/sxy/sxy.component'
 import ywbkComponent from '../components/ywbk/ywbk.component'
 import zjsjComponent from '../components/zjsj/zjsj.component'
@@ -43,6 +45,7 @@ appModule.config(['$uiRouterProvider', '$locationProvider', function($uiRouterPr
   stateRegistry.register(newscenterRoute)
   stateRegistry.register(recruitmentRoute)
   stateRegistry.register(shzrRoute)
+  stateRegistry.register(styleusRoute)
   stateRegistry.register(sxyRoute)
   stateRegistry.register(ywbkRoute)
   stateRegistry.register(zjsjRoute)
@@ -57,6 +60,7 @@ appModule.component('index', indexComponent)
 appModule.component('newscenter', newscenterComponent)
 appModule.component('recruitment', recruitmentComponent)
 appModule.component('shzr', shzrComponent)
+appModule.component('styleus', styleusComponent)
 appModule.component('sxy',sxyComponent)
 appModule.component('ywbk', ywbkComponent)
 appModule.component('zjsj', zjsjComponent)
