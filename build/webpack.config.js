@@ -83,7 +83,7 @@ module.exports = (mode) => {
     plugins: isDev ? basePlugin : basePlugin.concat([
       new CopywebpackPlugin([{
         from: path.join(__dirname, '../assets', 'init'),
-        to: path.join(__dirname, '../dist/assets', 'init')
+        to: path.join(__dirname, '..', 'dist')
       }, {
         from: path.join(__dirname, '../assets', 'imgs'),
         to: path.join(__dirname, '../dist/assets', 'imgs')
