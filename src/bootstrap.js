@@ -15,6 +15,7 @@ import { zjsjModule } from './modules/zjsj.module'
 import {
   aboutusComponent,
   backtopComponent,
+  blocktitleComponent,
   bannerComponent,
   footerComponent,
   headerComponent,
@@ -47,14 +48,10 @@ let initModule = angular.module('init', [
   zjsjModule.name
 ])
 
-// add visualizer
-initModule.config(['$uiRouterProvider', function($uiRouter) {
-  $uiRouter.plugin(Visualizer)
-}])
-
 // register component
 initModule.component('aboutus', aboutusComponent)
 initModule.component('backtop', backtopComponent)
+initModule.component('blocktitle', blocktitleComponent)
 initModule.component('banner', bannerComponent)
 initModule.component('footer', footerComponent)
 initModule.component('header', headerComponent)
@@ -77,3 +74,8 @@ initModule.service('storageService', storageService)
 
 initModule.run(loadingRunBlock)
 initModule.run(serviceWokerRunBlock)
+
+// add visualizer
+initModule.config(['$uiRouterProvider', function($uiRouter) {
+  import('@uirouter/visualizer').then(module => $uiRouter.plugin(module.Visualizer))
+}])

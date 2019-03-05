@@ -1,12 +1,8 @@
-import footer from '@data/footer.js';
 import scrollto from '@utils/scrollto.js';
 
 class Footer {
   constructor($scope) {
     this.$scope = $scope;
-    this.nav = footer.nav;
-    this.service = footer.service;
-    this.qrcode = footer.qrcode;
     this.showing = {}
   }
 

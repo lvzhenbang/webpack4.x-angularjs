@@ -15,9 +15,7 @@ class RecruitmentContoller {
 RecruitmentContoller.$inject = ['storageService']
 
 export const recruitmentComponent = {
-  bindings: {
-    recruitment: '<'
-  },
+  bindings: { recruitment: '<' },
   controller: RecruitmentContoller,
   template: `
   <div class="sj_recruitment">

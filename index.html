@@ -9,12 +9,12 @@
   <style>
     .spinner {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      width: 100px;
-      height: 100px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .7);
 
       display: flex;
       justify-content: center;
@@ -28,9 +28,9 @@
       width: 0;
       height: 0;
       border-right: 25px solid transparent;
-      border-top: 25px solid green;
-      border-left: 25px solid green;
-      border-bottom: 25px solid green;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
       border-radius: 25px;
 
       position: relative;
@@ -72,7 +72,7 @@
       width: 10px;
       height: 10px;
       margin: 2px;
-      background-color: green;
+      background-color: #fff;
 
       position: absolute;
       top: 25px;

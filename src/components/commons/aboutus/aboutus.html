@@ -1,9 +1,5 @@
 <div class="about-us sj_wrapper">
-  <div class="sj_index-title">
-    <span> {{ $ctrl.aboutus.cn_name }} </span>
-    <div></div>
-    <span> {{ $ctrl.aboutus.en_name }} </span>
-  </div>
+  <blocktitle title="$ctrl.aboutus.title"></blocktitle>
 
   <div class="about-list">
     <div class="about-item" ng-repeat="item in $ctrl.aboutus.list">

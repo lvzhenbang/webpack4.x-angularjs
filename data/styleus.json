@@ -1,6 +1,8 @@
 {
-  "cn_name": "企业风采",
-  "en_name": "OUR STYLE",
+  "title": {
+    "cn_name": "企业风采",
+    "en_name": "OUR STYLE"
+  },
   "list": [
     {
       "img": "assets/imgs/style/01.jpg",

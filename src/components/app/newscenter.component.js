@@ -41,9 +41,7 @@ class NewscenterController {
 NewscenterController.$inject = ['$timeout'];
 
 export const newscenterComponent = {
-  bindings: {
-    newscenter: '<'
-  },
+  bindings: { newscenter: '<' },
   controller: NewscenterController,
   template: `
   <div class="sj_news-center">

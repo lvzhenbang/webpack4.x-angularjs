@@ -3,6 +3,11 @@ import controller from './footer.controller';
 import '@css/commons/footer.scss';
 
 let footerComponent = {
+  bindings: {
+    nav: '<',
+    qrcode: '<',
+    service: '<'
+  },
   template,
   controller
 };

@@ -1,8 +1,16 @@
 // app
 export const appRoute = {
   name: 'app',
+  url: '',
   redirectTo: 'index',
-  component: 'app'
+  resolve: {
+    index: ['storageService', iss => iss.init('data/index.json', 'index')]
+  },
+  views: {
+    '!$default': {
+      component: 'app'
+    }
+  }
 }
 
 // app/contactus
@@ -27,9 +35,13 @@ export const indexRoute = {
   name: 'index',
   url: '/index',
   resolve: {
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
     index: ['storageService', iss => iss.init('data/index.json', 'index')]
   },
   views: {
+    banner: {
+      component: 'banner'
+    },
     app: {
       component: 'index'
     }
@@ -45,6 +57,9 @@ export const newscenterRoute = {
     newscenter: ['storageService', iss => iss.init('data/newscenter.json', 'newscenter')]
   },
   views: {
+    banner: {
+      component: ''
+    },
     app: {
       component: 'newscenter'
     }
@@ -77,6 +92,9 @@ export const shzrRoute = {
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.shzr )]
   },
   views: {
+    banner: {
+      component: 'banner'
+    },
     app: {
       component: 'shzr'
     }
@@ -98,6 +116,9 @@ export const styleusRoute = {
     styleus: ['storageService', iss => iss.init('data/styleus.json', 'styleus')]
   },
   views: {
+    banner: {
+      component: ''
+    },
     app: {
       component: 'styleus'
     }
@@ -115,6 +136,9 @@ export const sxyRoute = {
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.sxy )]
   },
   views: {
+    banner: {
+      component: 'banner'
+    },
     app: {
       component: 'sxy'
     }
@@ -138,6 +162,9 @@ export const ywbkRoute = {
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.ywbk )]
   },
   views: {
+    banner: {
+      component: 'banner'
+    },
     app: {
       component: 'ywbk'
     }
@@ -161,6 +188,9 @@ export const zjsjRoute = {
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.zjsj )]
   },
   views: {
+    banner: {
+      component: 'banner'
+    },
     app: {
       component: 'zjsj'
     }

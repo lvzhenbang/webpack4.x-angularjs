@@ -20,11 +20,7 @@ export const styleusComponent = {
   controller: StyleusController,
   template: `
   <div class="sj_style-list sj_wrapper">
-    <div class="sj_index-title">
-      <span> {{ $ctrl.styleus.cn_name }} </span>
-      <div></div>
-      <span> {{ $ctrl.styleus.en_name }} </span>
-    </div>
+    <blocktitle title="$ctrl.styleus.title"></blocktitle>
 
     <div class="style-list">
       <div

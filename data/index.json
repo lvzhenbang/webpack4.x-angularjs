@@ -1,11 +1,11 @@
 {
-  "header": {
+  "logo": {
     "img": "assets/imgs/logo.png",
     "alt": "圣捷集团"
   },
   "nav": [
     {
-      "href": "index",
+      "href": "zjsj",
       "text": "走进圣捷",
       "type": "",
       "subMap": [
@@ -70,6 +70,15 @@
       "type": "contactus"
     }
   ],
+  "service": {
+    "phone": "400-075-2005",
+    "worktime": "9:00-18:00&nsp;&nsp;周一至周五"
+  },
+  "qrcode": {
+    "img": "assets/imgs/index/sj-qr.png",
+    "alt": "微信公众号二维码",
+    "text": "扫一扫关注圣捷投资"
+  },
   "banner": [
     {
       "href": "styleus",
@@ -87,18 +96,11 @@
       "title": ""
     }
   ],
-  "service": {
-    "phone": "400-075-2005",
-    "worktime": "9:00-18:00&nsp;&nsp;周一至周五"
-  },
-  "qrcode": {
-    "img": "assets/imgs/index/sj-qr.png",
-    "alt": "微信公众号二维码",
-    "text": "扫一扫关注圣捷投资"
-  },
   "products": {
-    "cn_name": "金融产品",
-    "en_name": "PRODUCT",
+    "title": {
+      "cn_name": "金融产品",
+      "en_name": "PRODUCT"
+    },
     "list": [
       {
         "cn_name": "信用贷款",
@@ -124,8 +126,10 @@
     ]
   },
   "partners": {
-    "cn_name": "合作伙伴",
-    "en_name": "PARTNER",
+    "title": {
+      "cn_name": "合作伙伴",
+      "en_name": "PARTNER"
+    },
     "list": [
       {
         "img": "assets/imgs/index/partner-1.jpg",
@@ -162,8 +166,10 @@
     ]
   },
   "aboutus": {
-    "cn_name": "关于我们",
-    "en_name": "ABOUT US",
+    "title": {
+      "cn_name": "关于我们",
+      "en_name": "ABOUT US"
+    },
     "list": [
       "互联网金融",
       "全品类金融",

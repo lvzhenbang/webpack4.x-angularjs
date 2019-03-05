@@ -1,7 +1,9 @@
 {
-  "cn_name": "人才招聘",
-  "en_name": "RECRUITMENT",
   "img": "assets/imgs/recruit/sj-banner.jpg",
+  "title": {
+    "cn_name": "人才招聘",
+    "en_name": "RECRUITMENT"
+  },
   "thead": [
     {
       "cn_name": "职位名称",

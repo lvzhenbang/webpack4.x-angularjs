@@ -1,7 +1,9 @@
 {
-  "cn_name": "联系我们",
-  "en_name": "CONTACT US",
   "img": "assets/imgs/second/contactus-tag.png",
+  "title": {
+    "cn_name": "联系我们",
+    "en_name": "CONTACT US"
+  },
   "company": {
     "img": "assets/imgs/second/conatctus-logo.png",
     "alt": "logo",

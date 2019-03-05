@@ -1,14 +1,16 @@
 import '@css/index.scss';
 
 export const appComponent = {
+  bindings: { index: '<' },
   template: `
-  <header></header>
-  <header class="sj_nav-fixed" navfixed></header>
-  
+  <header logo="$ctrl.index.logo" nav="$ctrl.index.nav"></header>
+  <header logo="$ctrl.index.logo" nav="$ctrl.index.nav" class="sj_nav-fixed" navfixed></header>
+
+  <div ui-view="banner"></div>
   <div ui-view="app"></div>
   
   <map></map>
-  <footer></footer>
+  <footer nav="$ctrl.index.nav" qrcode="$ctrl.index.qrcode" service="$ctrl.index.service"></footer>
   <backtop></backtop>
   `
 }
