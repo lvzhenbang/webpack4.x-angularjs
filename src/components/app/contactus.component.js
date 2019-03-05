@@ -2,7 +2,8 @@ import '@css/contactus/index.scss';
 
 export const contactusComponent = {
   bindings: {
-    contactus: '<'
+    contactus: '<',
+    aboutus: '<'
   },
   template: `
   <div id="contactus" class="sj_contactus">
@@ -42,6 +43,6 @@ export const contactusComponent = {
     </div>
   </div>
 
-  <aboutus aboutus="$ctrl.index.aboutus"></aboutus>
+  <aboutus aboutus="$ctrl.aboutus"></aboutus>
   `
 }

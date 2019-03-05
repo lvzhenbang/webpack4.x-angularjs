@@ -12,12 +12,13 @@ ZjsjController.$inject = ['storageService']
 
 export const zjsjComponent = {
   bindings: {
-    data: '<'
+    banner: '<',
+    tabs: '<'
   },
   template: `
-  <banner banner="$ctrl.data.banner"></banner>
+  <banner banner="$ctrl.banner"></banner>
   <div class="sj_wrapper">
-    <tab data="$ctrl.data.tabs.zjsj"></tab>
+    <tab data="$ctrl.tabs"></tab>
     <div ui-view="zjsj"></div>
   </div>
   `,

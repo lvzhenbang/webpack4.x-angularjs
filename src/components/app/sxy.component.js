@@ -12,12 +12,13 @@ SxyController.$inject = ['storageService']
 
 export const sxyComponent = {
   bindings: {
-    data: '<'
+    banner: '<',
+    tabs: '<'
   },
   template: `
-  <banner banner="$ctrl.data.banner"></banner>
+  <banner banner="$ctrl.banner"></banner>
   <div class="sj_wrapper">
-    <tab data="$ctrl.data.tabs.sxy"></tab>
+    <tab data="$ctrl.tabs"></tab>
     <div ui-view="sxy"></div>
   </div>
   `,

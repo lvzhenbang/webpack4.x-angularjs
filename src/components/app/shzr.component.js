@@ -12,12 +12,13 @@ ShzrController.$inject = ['storageService']
 
 export const shzrComponent = {
   bindings: {
-    data: '<'
+    banner: '<',
+    tabs: '<'
   },
   template: `
-  <banner banner="$ctrl.data.banner"></banner>
+  <banner banner="$ctrl.banner"></banner>
   <div class="sj_wrapper">
-    <tab data="$ctrl.data.tabs.shzr"></tab>
+    <tab data="$ctrl.tabs"></tab>
     <div ui-view="shzr"></div>
   </div>
   `,

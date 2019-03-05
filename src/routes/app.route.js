@@ -11,7 +11,8 @@ export const contactusRoute = {
   name: 'contactus',
   url: '/contactus',
   resolve: {
-    contactus: ['storageService', iss => iss.init('data/contactus.json', 'contactus')]
+    contactus: ['storageService', iss => iss.init('data/contactus.json', 'contactus')],
+    aboutus: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.aboutus )]
   },
   views: {
     app: {
@@ -72,21 +73,8 @@ export const shzrRoute = {
   url: '/shzr',
   redirectTo: 'system',
   resolve: {
-    data: ['storageService', iss => {
-      let _data = {}
-      return iss
-        .init('data/index.json', 'index')
-        .then(data => {
-          _data.banner = data.banner
-        })
-        .then(() => iss
-          .init('data/sidenav.json', 'sidenav')
-          .then(data => {
-            _data.tabs = data
-            return _data
-          })
-        )
-    }]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.shzr )]
   },
   views: {
     app: {
@@ -123,21 +111,8 @@ export const sxyRoute = {
   url: '/sxy',
   redirectTo: 'school',
   resolve: {
-    data: ['storageService', iss => {
-      let _data = {}
-      return iss
-        .init('data/index.json', 'index')
-        .then(data => {
-          _data.banner = data.banner
-        })
-        .then(() => iss
-          .init('data/sidenav.json', 'sidenav')
-          .then(data => {
-            _data.tabs = data
-            return _data
-          })
-        )
-    }]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.sxy )]
   },
   views: {
     app: {
@@ -159,21 +134,8 @@ export const ywbkRoute = {
   url: '/ywbk',
   redirectTo: 'finance',
   resolve: {
-    data: ['storageService', iss => {
-      let _data = {}
-      return iss
-        .init('data/index.json', 'index')
-        .then(data => {
-          _data.banner = data.banner
-        })
-        .then(() => iss
-          .init('data/sidenav.json', 'sidenav')
-          .then(data => {
-            _data.tabs = data
-            return _data
-          })
-        )
-    }]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.ywbk )]
   },
   views: {
     app: {
@@ -195,21 +157,8 @@ export const zjsjRoute = {
   url: '/zjsj',
   redirectTo: 'investment',
   resolve: {
-    data: ['storageService', iss => {
-      let _data = {}
-      return iss
-        .init('data/index.json', 'index')
-        .then(data => {
-          _data.banner = data.banner
-        })
-        .then(() => iss
-          .init('data/sidenav.json', 'sidenav')
-          .then(data => {
-            _data.tabs = data
-            return _data
-          })
-        )
-    }]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.zjsj )]
   },
   views: {
     app: {
