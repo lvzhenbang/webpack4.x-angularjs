@@ -51,8 +51,6 @@ appModule.config(['$uiRouterProvider', '$locationProvider', function($uiRouterPr
   stateRegistry.register(sxyRoute)
   stateRegistry.register(ywbkRoute)
   stateRegistry.register(zjsjRoute)
-
-  $uiRouterProvider.urlService.rules.when('', '/index')
 }])
 
 // register component
