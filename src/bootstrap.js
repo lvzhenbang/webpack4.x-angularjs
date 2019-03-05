@@ -18,7 +18,8 @@ import {
   headerComponent,
   mapComponent,
   partnersComponent,
-  productsComponent
+  productsComponent,
+  tabComponent
 } from './components/commons'
 
 // dirctive
@@ -53,6 +54,7 @@ initModule.component('header', headerComponent)
 initModule.component('map', mapComponent)
 initModule.component('partners', partnersComponent)
 initModule.component('products', productsComponent)
+initModule.component('tab', tabComponent)
 
 // register directive
 initModule.directive('backtop', backtopDirective)

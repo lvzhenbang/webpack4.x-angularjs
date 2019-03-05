@@ -1,11 +1,20 @@
 import template from './banner.html';
-import controller from './banner.controller';
 import '@css/commons/banner.scss';
+
+class BannerController {
+  constructor() {}
+
+  isActive(index) {
+    return index === 0 ? true : false
+  }
+}
+
+BannerController.$inject = ['$rootscope']
 
 let bannerComponent = {
   bindings: { banner: '<'},
   template,
-  controller
+  controller: BannerController
 };
 
 export default bannerComponent;

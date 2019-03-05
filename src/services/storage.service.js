@@ -3,23 +3,33 @@ export class storageService {
     this.$timeout = $timeout
     this.$q = $q
     this.storage = window.localStorage
-    this.dataService = dataService
+    this.dataService = dataService,
+    this._data = null
   }
 
   init(address, name) {
     let _data = this.getValue(name)
+    // this._data = _data ? this.$q.resolve(_data) : this
+    //   .dataService
+    //   .getData(address)
+    //   .then(data => {
+    //     this.storage.setItem(name, this.toStr(data))
+    //     return this.$q.resolve(data) 
+    //   })
 
-    if(!_data){
-     this
+    // return this.$timeout(() => this._data, 3000)
+
+    if(_data) {
+      return this.$q.resolve(_data)
+    } else {
+      return this.$timeout(() => this
         .dataService
         .getData(address)
         .then(data => {
           this.storage.setItem(name, this.toStr(data))
-          _data = data
-        })
+          return this.$q.resolve(data) 
+        }), 3000)
     }
-
-    return this.$timeout(() => _data, 3000)
   }
 
   toJson(str) {

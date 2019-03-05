@@ -17,17 +17,19 @@ import {
   zjsjRoute
 } from '../routes/app.route'
 
-// app child component
-import appComponent from '../components/app/app.component'
-import contactusComponent from '../components/contactus/contactus.component'
-import indexComponent from '../components/index/index.component'
-import newscenterComponent from '../components/newscenter/newscenter.component'
-import recruitmentComponent from '../components/recruitment/recruitment.component'
-import shzrComponent from '../components/shzr/shzr.component'
-import styleusComponent from '../components/styleus/styleus.component'
-import sxyComponent from '../components/sxy/sxy.component'
-import ywbkComponent from '../components/ywbk/ywbk.component'
-import zjsjComponent from '../components/zjsj/zjsj.component'
+// app & app's child component
+import {
+  appComponent,
+  contactusComponent,
+  indexComponent,
+  newscenterComponent,
+  recruitmentComponent,
+  shzrComponent,
+  styleusComponent,
+  sxyComponent,
+  ywbkComponent,
+  zjsjComponent
+} from '../components/app'
 
 // define appModule
 export const appModule = angular.module('app', [])
