@@ -1,3 +1,7 @@
+/**
+ * route of sxy
+ * by lzb
+ */
 // sxy/celebrites
 export const celebritesRoute = {
   parent: 'sxy',

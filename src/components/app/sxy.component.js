@@ -1,3 +1,7 @@
+/**
+ * component of sxy
+ * by lzb
+ */
 import '@css/second/index.scss';
 
 class SxyController {

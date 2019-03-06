@@ -1,4 +1,9 @@
+/**
+ * component of newscenter
+ * by lzb
+ */
 import '@css/newscenter/index.scss';
+
 class NewscenterController {
   constructor($timeout) {
     this.$timeout = $timeout

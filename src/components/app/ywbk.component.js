@@ -1,3 +1,7 @@
+/**
+ * component of ywbk
+ * by lzb
+ */
 import '@css/second/index.scss';
 
 class YwbkController {

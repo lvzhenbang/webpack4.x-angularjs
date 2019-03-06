@@ -1,3 +1,7 @@
+/**
+ * route of shzr
+ * by lzb
+ */
 // shzr/career
 export const careerRoute = {
   parent: 'shzr',

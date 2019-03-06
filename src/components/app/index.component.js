@@ -1,3 +1,7 @@
+/**
+ * component of index
+ * by lzb
+ */
 export const indexComponent = {
   bindings: {
     index: '<'

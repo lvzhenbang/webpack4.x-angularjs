@@ -1,3 +1,8 @@
+/**
+ * components of zjsj
+ * by lzb
+ */
+
 import cultureComponent from './culture'
 import eventComponent from './event'
 import investmentComponent from './investment'

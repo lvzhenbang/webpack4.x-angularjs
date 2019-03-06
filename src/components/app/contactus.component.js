@@ -1,3 +1,7 @@
+/**
+ * component of contactus
+ * by lzb
+ */
 import '@css/contactus/index.scss';
 
 export const contactusComponent = {

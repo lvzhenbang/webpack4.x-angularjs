@@ -1,3 +1,7 @@
+/**
+ * service of data-http
+ * by lzb
+ */
 export class dataService {
   constructor($http, $timeout, $q) {
     this.$http = $http

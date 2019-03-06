@@ -1,3 +1,7 @@
+/**
+ * component of shzr
+ * by lzb
+ */
 import '@css/second/index.scss';
 
 class ShzrController {

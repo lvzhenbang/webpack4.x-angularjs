@@ -1,3 +1,7 @@
+/**
+ * component of banner
+ * by lzb
+ */
 import template from './banner.html';
 import '@css/commons/banner.scss';
 

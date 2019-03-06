@@ -1,3 +1,7 @@
+/**
+ * service of http request with storage (localstorage)
+ * by lzb
+ */
 export class storageService {
   constructor($timeout, $q, dataService) {
     this.$timeout = $timeout

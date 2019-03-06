@@ -1,3 +1,7 @@
+/**
+ * component of block-title
+ * by lzb
+ */
 let blocktitleComponent = {
   bindings: { title: '<'},
   template: `

@@ -1,3 +1,7 @@
+/**
+ * boot module
+ * by lzb
+ */
 import * as angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 import oclazyload from 'oclazyload';

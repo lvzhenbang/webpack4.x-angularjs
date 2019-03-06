@@ -1,3 +1,7 @@
+/**
+ * component of aboutus
+ * by lzb
+ */
 import template from './aboutus.html';
 import '@css/aboutus/index.scss'
 

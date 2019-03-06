@@ -1,3 +1,7 @@
+/**
+ * route of navfixed
+ * by lzb
+ */
 export function navfixedDirective() {
   return {
     restrict: 'A',

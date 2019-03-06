@@ -1,3 +1,7 @@
+/**
+ * component of header
+ * by lzb
+ */
 import '@css/commons/header.scss';
 
 let headerComponent = {

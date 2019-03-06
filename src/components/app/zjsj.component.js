@@ -1,3 +1,7 @@
+/**
+ * component of zjsj
+ * by lzb
+ */
 import '@css/second/index.scss';
 
 class ZjsjController {

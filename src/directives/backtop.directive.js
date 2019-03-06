@@ -1,4 +1,7 @@
-
+/**
+ * directive of backtop
+ * by lzb
+ */
 import scrollto from '@utils/scrollto.js';
 
 export function backtopDirective() {

@@ -1,3 +1,7 @@
+/**
+ * directive of carousel
+ * by lzb
+ */
 import Carousel from '../utils/carousel'
 export function carouselDirective() {
   return {

@@ -1,3 +1,7 @@
+/**
+ * directive of map
+ * by lzb
+ */
 export function mapDirective() {
   return {
     restrict: 'A',

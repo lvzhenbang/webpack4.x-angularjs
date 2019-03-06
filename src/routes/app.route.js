@@ -1,3 +1,7 @@
+/**
+ * route of app & children
+ * by lzb
+ */
 // app
 export const appRoute = {
   name: 'app',

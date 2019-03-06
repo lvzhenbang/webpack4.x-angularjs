@@ -1,3 +1,7 @@
+/**
+ * component of styleus
+ * by lzb
+ */
 import '@css/styleus/index.scss'
 
 class StyleusController {

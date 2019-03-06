@@ -1,3 +1,7 @@
+/**
+ * route of zjsj
+ * by lzb
+ */
 // zjsj/culture
 export const cultureRoute = {
   parent: 'zjsj',

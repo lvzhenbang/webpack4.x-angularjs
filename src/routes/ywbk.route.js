@@ -1,3 +1,7 @@
+/**
+ * route of ywbk
+ * by lzb
+ */
 // ywbk/allfinance
 export const allfinanceRoute = {
   parent: 'ywbk',

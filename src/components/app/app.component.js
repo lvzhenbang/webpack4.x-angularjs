@@ -1,3 +1,7 @@
+/**
+ * component of app
+ * by lzb
+ */
 import '@css/index.scss';
 
 export const appComponent = {

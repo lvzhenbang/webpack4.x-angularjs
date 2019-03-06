@@ -1,3 +1,7 @@
+/**
+ * service of loading
+ * by lzb
+ */
 export function serviceWorker () {
   this.registerWorker = registerWorker
   

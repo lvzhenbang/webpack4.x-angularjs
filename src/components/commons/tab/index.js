@@ -1,3 +1,7 @@
+/**
+ * component of tab
+ * by lzb
+ */
 import '@css/commons/tabs.scss'
 
 let tabComponent = {

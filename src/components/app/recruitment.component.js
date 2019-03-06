@@ -1,3 +1,7 @@
+/**
+ * component of recruitment
+ * by lzb
+ */
 import '@css/recruitment/index.scss'
 
 class RecruitmentContoller {

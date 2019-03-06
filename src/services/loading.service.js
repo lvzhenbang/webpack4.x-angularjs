@@ -1,5 +1,7 @@
-loadingService.$inject = ['$compile', '$rootScope'];
-loadingRunBlock.$inject = ['$transitions', 'loadingService'];
+/**
+ * service of loading
+ * by lzb
+ */
 
 export function loadingService () {
   this.showLoading = showLoading
@@ -33,6 +35,8 @@ export function loadingService () {
   }
 }
 
+loadingService.$inject = ['$compile', '$rootScope'];
+
 export function loadingRunBlock($transitions, loadingService) {
   $transitions.onError({}, function($transition) {
     console.log($transition.error().message, $transition.error().redirected)
@@ -40,3 +44,5 @@ export function loadingRunBlock($transitions, loadingService) {
   $transitions.onStart({ /* match anything */ }, loadingService.showLoading);
   $transitions.onFinish({ /* match anything */ }, loadingService.hideLoading);
 }
+
+loadingRunBlock.$inject = ['$transitions', 'loadingService'];

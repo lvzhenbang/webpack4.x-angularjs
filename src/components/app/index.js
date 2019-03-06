@@ -1,3 +1,7 @@
+/**
+ * component of app & children
+ * by lzb
+ */
 import { appComponent } from './app.component'
 import { contactusComponent } from './contactus.component'
 import { indexComponent } from './index.component'

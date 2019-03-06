@@ -1,3 +1,8 @@
+/**
+ * components of ywbk
+ * by lzb
+ */
+
 import allfinanceComponent from './allfinance'
 import cultureComponent from './culture'
 import estateComponent from './estate'
