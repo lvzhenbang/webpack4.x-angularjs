@@ -1,5 +1,6 @@
 import aboutusComponent from './aboutus'
 import backtopComponent from './backtop'
+import blockComponent from './block'
 import blocktitleComponent from './blocktitle'
 import bannerComponent from './banner'
 import footerComponent from './footer'
@@ -12,6 +13,7 @@ import tabComponent from './tab'
 export {
   aboutusComponent,
   backtopComponent,
+  blockComponent,
   blocktitleComponent,
   bannerComponent,
   footerComponent,

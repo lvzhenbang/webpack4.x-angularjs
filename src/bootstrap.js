@@ -2,31 +2,24 @@
  * boot module
  * by lzb
  */
-import * as angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
-import oclazyload from 'oclazyload';
-import { Visualizer } from '@uirouter/visualizer';
+import * as angular from 'angular'
+import uiRouter from '@uirouter/angularjs'
+import oclazyload from 'oclazyload'
 
-
-// sub Module
-import { appModule } from './modules/app.module'
-import { shzrModule } from './modules/shzr.module'
-import { sxyModule } from './modules/sxy.module'
-import { ywbkModule } from './modules/ywbk.module'
-import { zjsjModule } from './modules/zjsj.module'
+import { appModule }  from'./modules/app.module'
 
 // commons component
 import {
   aboutusComponent,
   backtopComponent,
+  blockComponent,
   blocktitleComponent,
   bannerComponent,
   footerComponent,
   headerComponent,
   mapComponent,
   partnersComponent,
-  productsComponent,
-  tabComponent
+  productsComponent
 } from './components/commons'
 
 // dirctive
@@ -45,16 +38,13 @@ import { storageService } from './services/storage.service'
 let initModule = angular.module('init', [
   uiRouter,
   oclazyload,
-  appModule.name,
-  shzrModule.name,
-  sxyModule.name,
-  ywbkModule.name,
-  zjsjModule.name
+  appModule.name
 ])
 
 // register component
 initModule.component('aboutus', aboutusComponent)
 initModule.component('backtop', backtopComponent)
+initModule.component('block', blockComponent)
 initModule.component('blocktitle', blocktitleComponent)
 initModule.component('banner', bannerComponent)
 initModule.component('footer', footerComponent)
@@ -62,7 +52,6 @@ initModule.component('header', headerComponent)
 initModule.component('map', mapComponent)
 initModule.component('partners', partnersComponent)
 initModule.component('products', productsComponent)
-initModule.component('tab', tabComponent)
 
 // register directive
 initModule.directive('backtop', backtopDirective)

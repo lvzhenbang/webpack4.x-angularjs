@@ -2,7 +2,7 @@
   "zjsj": {
     "cn_name": "走进圣捷",
     "en_name": "INTO SHENGJIE",
-    "tabs": [
+    "subtabs": [
       {
         "cn_name": "圣捷投资",
         "en_name": "SHENGJIE INVESTMENT",
@@ -33,7 +33,7 @@
   "ywbk": {
     "cn_name": "业务板块",
     "en_name": "BUSINESS SECTOR",
-    "tabs": [
+    "subtabs": [
       {
         "cn_name": "互联网金融",
         "en_name": "ONLINE FINANCE",
@@ -64,7 +64,7 @@
   "shzr": {
     "cn_name": "社会责任",
     "en_name": "SOCIAL RESPONSIBILITY",
-    "tabs": [
+    "subtabs": [
       {
         "cn_name": "责任体系",
         "en_name": "RESPONSIBILITY SYSTEM",
@@ -83,7 +83,7 @@
   "sxy": {
     "cn_name": "圣捷商学院",
     "en_name": "SHENGJIE BUSINESS SCHOOL",
-    "tabs": [
+    "subtabs": [
       {
         "cn_name": "圣捷商学院",
         "en_name": "SHENGJIE BUSINESS SCHOOL",

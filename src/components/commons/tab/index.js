@@ -5,7 +5,10 @@
 import '@css/commons/tabs.scss'
 
 let tabComponent = {
-  bindings: { data: '<' },
+  bindings: {
+    type: '<',
+    data: '<'
+  },
   template: `
   <div class="sj_block-title">
     <div> {{ $ctrl.data.cn_name }} </div>
@@ -21,7 +24,7 @@ let tabComponent = {
             class="tab-item"
             ng-repeat="(index, item) in $ctrl.data.tabs"
             ng-class="{ active: isActive(index) }"
-            ui-sref="{{ item.type }}">
+            ui-sref="{{ $ctrl.type }}">
             <div> {{ item.cn_name }} </div>
             <div> {{ item.en_name }} </div>
           </a>

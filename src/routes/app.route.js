@@ -14,6 +14,12 @@ export const appRoute = {
     '!$default': {
       component: 'app'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/app.module').then(module => {
+      $ocLazyLoad.load(module.appModule)
+    })
   }
 }
 
@@ -90,7 +96,7 @@ export const shzrRoute = {
   parent: 'app',
   name: 'shzr',
   url: '/shzr',
-  redirectTo: 'system',
+  redirectTo: 'shzr-block',
   resolve: {
     banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.shzr )]
@@ -102,12 +108,6 @@ export const shzrRoute = {
     app: {
       component: 'shzr'
     }
-  },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/shzr.module').then(mod => {
-      $ocLazyLoad.load(mod.shzrModule)
-    })
   }
 }
 
@@ -134,7 +134,7 @@ export const sxyRoute = {
   parent: 'app',
   name: 'sxy',
   url: '/sxy',
-  redirectTo: 'school',
+  redirectTo: 'sxy-block',
   resolve: {
     banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.sxy )]
@@ -146,12 +146,6 @@ export const sxyRoute = {
     app: {
       component: 'sxy'
     }
-  },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/sxy.module').then(mod => {
-      $ocLazyLoad.load(mod.sxyModule)
-    })
   }
 }
 
@@ -160,7 +154,7 @@ export const ywbkRoute = {
   parent: 'app',
   name: 'ywbk',
   url: '/ywbk',
-  redirectTo: 'finance',
+  redirectTo: 'ywbk-block',
   resolve: {
     banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.ywbk )]
@@ -172,12 +166,6 @@ export const ywbkRoute = {
     app: {
       component: 'ywbk'
     }
-  },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/ywbk.module').then(mod => {
-      $ocLazyLoad.load(mod.ywbkModule)
-    })
   }
 }
 
@@ -186,7 +174,7 @@ export const zjsjRoute = {
   parent: 'app',
   name: 'zjsj',
   url: '/zjsj',
-  redirectTo: 'investment',
+  redirectTo: 'zjsj-block',
   resolve: {
     banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
     tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.zjsj )]
@@ -198,11 +186,5 @@ export const zjsjRoute = {
     app: {
       component: 'zjsj'
     }
-  },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/zjsj.module').then(mod => {
-      $ocLazyLoad.load(mod.zjsjModule)
-    })
   }
 }
