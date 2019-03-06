@@ -85,6 +85,9 @@ export const recruitmentRoute = {
     recruitment: ['storageService', iss => iss.init('data/recruitment.json', 'recruitment')]
   },
   views: {
+    banner: {
+      component: ''
+    },
     app: {
       component: 'recruitment'
     }
@@ -108,6 +111,12 @@ export const shzrRoute = {
     app: {
       component: 'shzr'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/block.module').then(module => {
+      $ocLazyLoad.load(module.blocModule)
+    })
   }
 }
 
@@ -146,6 +155,12 @@ export const sxyRoute = {
     app: {
       component: 'sxy'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/block.module').then(module => {
+      $ocLazyLoad.load(module.blocModule)
+    })
   }
 }
 
@@ -166,6 +181,12 @@ export const ywbkRoute = {
     app: {
       component: 'ywbk'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/block.module').then(module => {
+      $ocLazyLoad.load(module.blocModule)
+    })
   }
 }
 
@@ -186,5 +207,11 @@ export const zjsjRoute = {
     app: {
       component: 'zjsj'
     }
+  },
+  lazyLoad: function(transition) {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
+    return import('../modules/block.module').then(module => {
+      $ocLazyLoad.load(module.blocModule)
+    })
   }
 }

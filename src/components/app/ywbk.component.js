@@ -40,7 +40,7 @@ export const ywbkComponent = {
         </div>
       </div>
     </div>
-    <div ui-view="ywbk"></div>
+    <div ui-view="block"></div>
   </div>
   `,
   controller: YwbkController

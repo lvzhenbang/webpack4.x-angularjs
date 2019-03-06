@@ -17,14 +17,6 @@ import {
   zjsjRoute
 } from '../routes/app.route'
 
-// block route
-import {
-  shzrBlockRoute,
-  sxyBlockRoute,
-  ywbkBlockRoute,
-  zjsjBlockRoute
-} from '../routes/block.route'
-
 // app & app's child component
 import {
   appComponent,
@@ -59,11 +51,6 @@ appModule.config(['$uiRouterProvider', '$locationProvider', function($uiRouterPr
   stateRegistry.register(sxyRoute)
   stateRegistry.register(ywbkRoute)
   stateRegistry.register(zjsjRoute)
-  // block route
-  stateRegistry.register(shzrBlockRoute)
-  stateRegistry.register(sxyBlockRoute)
-  stateRegistry.register(ywbkBlockRoute)
-  stateRegistry.register(zjsjBlockRoute)
 }])
 
 // register component

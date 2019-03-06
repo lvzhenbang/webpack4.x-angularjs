@@ -8,7 +8,6 @@ import headerComponent from './header'
 import mapComponent from './map'
 import partnersComponent from './partners'
 import productsComponent from './products'
-import tabComponent from './tab'
 
 export {
   aboutusComponent,
@@ -20,6 +19,5 @@ export {
   headerComponent,
   mapComponent,
   partnersComponent,
-  productsComponent,
-  tabComponent
+  productsComponent
 }

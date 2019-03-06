@@ -5,8 +5,10 @@
 import * as angular from 'angular'
 import uiRouter from '@uirouter/angularjs'
 import oclazyload from 'oclazyload'
+import { Visualizer } from '@uirouter/visualizer'
 
 import { appModule }  from'./modules/app.module'
+import { blockModule }  from'./modules/block.module'
 
 // commons component
 import {
@@ -35,10 +37,11 @@ import { dataService } from './services/data.service'
 import { storageService } from './services/storage.service'
 
 // define initModule
-let initModule = angular.module('init', [
+export const initModule = angular.module('init', [
   uiRouter,
   oclazyload,
-  appModule.name
+  appModule.name,
+  blockModule.name
 ])
 
 // register component
@@ -69,6 +72,6 @@ initModule.run(loadingRunBlock)
 initModule.run(serviceWokerRunBlock)
 
 // add visualizer
-initModule.config(['$uiRouterProvider', function($uiRouter) {
-  import('@uirouter/visualizer').then(module => $uiRouter.plugin(module.Visualizer))
+initModule.config(['$uiRouterProvider', function($uiRouterProvider) {
+  $uiRouterProvider.plugin(Visualizer)
 }])

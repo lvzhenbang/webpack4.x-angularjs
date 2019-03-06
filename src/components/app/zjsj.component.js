@@ -40,8 +40,7 @@ export const zjsjComponent = {
         </div>
       </div>
     </div>
-
-    <div ui-view="zjsj"></div>
+    <div ui-view="block"></div>
   </div>
   `,
   controller: ZjsjController

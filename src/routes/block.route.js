@@ -14,10 +14,10 @@ export const shzrBlockRoute = {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/shzr.json', 'shzr')
       .then(data => data[$transition$.params().type])
-    ] 
+    ]
   },
   views: {
-    'shzr': {
+    block: {
       component: 'block'
     }
   }
@@ -28,14 +28,17 @@ export const sxyBlockRoute = {
   parent: 'sxy',
   name: 'sxy-block',
   url: '/:type',
+  params: {
+    type: "school"
+  },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/sxy.json', 'sxy')
       .then(data => data[$transition$.params().type])
-    ] 
+    ]
   },
   views: {
-    'sxy': {
+    block: {
       component: 'block'
     }
   }
@@ -45,14 +48,17 @@ export const ywbkBlockRoute = {
   parent: 'ywbk',
   name: 'ywbk-block',
   url: '/:type',
+  params: {
+    type: "finance"
+  },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/ywbk.json', 'ywbk')
       .then(data => data[$transition$.params().type])
-    ] 
+    ]
   },
   views: {
-    'ywbk': {
+    block: {
       component: 'block'
     }
   }
@@ -70,10 +76,10 @@ export const zjsjBlockRoute = {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/zjsj.json', 'zjsj')
       .then(data => data[$transition$.params().type])
-    ] 
+    ]
   },
   views: {
-    'zjsj': {
+    block: {
       component: 'block'
     }
   }

@@ -3,6 +3,7 @@
  * by lzb
  */
 import '@css/index.scss';
+import '@css/commons/tabs.scss'
 
 export const appComponent = {
   bindings: { index: '<' },

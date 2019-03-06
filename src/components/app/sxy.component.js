@@ -40,7 +40,7 @@ export const sxyComponent = {
         </div>
       </div>
     </div>
-    <div ui-view="sxy"></div>
+    <div ui-view="block"></div>
   </div>
   `,
   controller: SxyController

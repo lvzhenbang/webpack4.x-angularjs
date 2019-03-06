@@ -40,7 +40,7 @@ export const shzrComponent = {
         </div>
       </div>
     </div>
-    <div ui-view="shzr"></div>
+    <div ui-view="block"></div>
   </div>
   `,
   controller: ShzrController
