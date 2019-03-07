@@ -17,9 +17,7 @@ export const appRoute = {
   },
   lazyLoad: function(transition) {
     const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/app.module').then(module => {
-      $ocLazyLoad.load(module.appModule)
-    })
+    return import('../modules/app.module').then(mod => $ocLazyLoad.load(mod.appModule))
   }
 }
 
@@ -114,9 +112,7 @@ export const shzrRoute = {
   },
   lazyLoad: function(transition) {
     const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(module => {
-      $ocLazyLoad.load(module.blocModule)
-    })
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
   }
 }
 
@@ -158,9 +154,7 @@ export const sxyRoute = {
   },
   lazyLoad: function(transition) {
     const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(module => {
-      $ocLazyLoad.load(module.blocModule)
-    })
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
   }
 }
 
@@ -184,9 +178,7 @@ export const ywbkRoute = {
   },
   lazyLoad: function(transition) {
     const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(module => {
-      $ocLazyLoad.load(module.blocModule)
-    })
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
   }
 }
 
@@ -210,8 +202,6 @@ export const zjsjRoute = {
   },
   lazyLoad: function(transition) {
     const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(module => {
-      $ocLazyLoad.load(module.blocModule)
-    })
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
   }
 }
