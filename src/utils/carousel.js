@@ -23,11 +23,7 @@ class Carousel {
   }
   
   getIndex(items, element) {
-    return this.makeArray(items).indexOf(element)
-  }
-
-  makeArray(nodeList) {
-    return nodeList ? [].slice.call(nodeList) : []
+    return [...items].indexOf(element)
   }
 
   reflow(element) {
