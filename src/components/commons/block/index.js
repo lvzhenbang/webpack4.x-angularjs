@@ -1,8 +1,6 @@
-import template from '@src/template/block.html';
+import template from '~src/template/block.html';
 
-let blockComponent = {
+export default {
   bindings: { data: '<' },
-  template
+  template,
 };
-
-export default blockComponent;

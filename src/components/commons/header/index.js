@@ -2,12 +2,12 @@
  * component of header
  * by lzb
  */
-import '@css/commons/header.scss';
+import '~css/commons/header.scss';
 
-let headerComponent = {
+export default {
   bindings: {
     logo: '<',
-    nav: '<'
+    nav: '<',
   },
   template: `
   <div class="sj_nav">
@@ -31,7 +31,5 @@ let headerComponent = {
       </div>
     </div>
   </div>
-  `
+  `,
 };
-
-export default headerComponent;

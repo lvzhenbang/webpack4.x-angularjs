@@ -2,31 +2,30 @@
  * component of zjsj
  * by lzb
  */
-import '@css/second/index.scss';
+import '~css/second/index.scss';
 
 class ZjsjController {
   constructor(storageService, $document) {
-    this.$document = $document
-  }
-
-  isActive(index) {
-    return index === 0 ? true : false
-  }
-
-  touchMove(event) {
-    let tabItem = event.target.parentNode,
-        itemWidth = tabItem.offsetWidth,
-        currentX = tabItem.offsetLeft,
-        tabBox = tabItem.parentNode.parentNode,
-        winWidth = tabBox.offsetWidth
-
-      event.clientX > winWidth/2 ? tabBox.scrollTo(currentX + itemWidth/2, 0) : tabBox.scrollTo(currentX - 3*itemWidth/2, 0)
+    this.$document = $document;
+    this.isActive = index => index === 0;
+    this.touchMove = (event) => {
+      const tabItem = event.target.parentNode;
+      const itemWidth = tabItem.offsetWidth;
+      const currentX = tabItem.offsetLeft;
+      const tabBox = tabItem.parentNode.parentNode;
+      const winWidth = tabBox.offsetWidth;
+      if (event.clientX > winWidth / 2) {
+        tabBox.scrollTo(currentX + itemWidth / 2, 0);
+      } else {
+        tabBox.scrollTo(currentX - 3 * itemWidth / 2, 0);
+      }
+    };
   }
 }
 
-ZjsjController.$inject = ['storageService', '$document']
+ZjsjController.$inject = ['storageService', '$document'];
 
-export const zjsjComponent = {
+export default {
   bindings: { tabs: '<' },
   template: `
   <div class="sj_wrapper">
@@ -56,5 +55,5 @@ export const zjsjComponent = {
     <div ui-view="block"></div>
   </div>
   `,
-  controller: ZjsjController
-}
+  controller: ZjsjController,
+};

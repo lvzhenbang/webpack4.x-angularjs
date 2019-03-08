@@ -2,10 +2,10 @@
  * component of app
  * by lzb
  */
-import '@css/index.scss';
-import '@css/commons/tabs.scss'
+import '~css/index.scss';
+import '~css/commons/tabs.scss';
 
-export const appComponent = {
+export default {
   bindings: { index: '<' },
   template: `
   <header logo="$ctrl.index.logo" nav="$ctrl.index.nav"></header>
@@ -17,5 +17,5 @@ export const appComponent = {
   <map></map>
   <footer nav="$ctrl.index.nav" qrcode="$ctrl.index.qrcode" service="$ctrl.index.service"></footer>
   <backtop></backtop>
-  `
-}
+  `,
+};

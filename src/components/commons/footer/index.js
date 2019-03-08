@@ -4,16 +4,14 @@
  */
 import template from './footer.html';
 import controller from './footer.controller';
-import '@css/commons/footer.scss';
+import '~css/commons/footer.scss';
 
-let footerComponent = {
+export default {
   bindings: {
     nav: '<',
     qrcode: '<',
-    service: '<'
+    service: '<',
   },
   template,
-  controller
+  controller,
 };
-
-export default footerComponent;

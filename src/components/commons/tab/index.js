@@ -2,12 +2,12 @@
  * component of tab
  * by lzb
  */
-import '@css/commons/tabs.scss'
+import '~css/commons/tabs.scss';
 
-let tabComponent = {
+export default {
   bindings: {
     type: '<',
-    data: '<'
+    data: '<',
   },
   template: `
   <div class="sj_block-title">
@@ -32,8 +32,5 @@ let tabComponent = {
       </div>
     </div>
   </div>
-  `
-}
-
-export default tabComponent
-
+  `,
+};

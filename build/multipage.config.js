@@ -1,50 +1,46 @@
-const path = require('path')
+const path = require('path');
 
 // entry
-let entry = {
-  app: path.join(__dirname, '../src/bootstrap.js')
-}
+const entry = {
+  app: path.resolve(__dirname, '../src/bootstrap.js'),
+};
 
 // make pages
 const HtmlWebapckPlugin = require('html-webpack-plugin');
-let plugins = [];
 
+let plugins = [
+  new HtmlWebapckPlugin({
+    /* inital page */
+    filename: 'index.html',
+    chunks: ['app'],
+    /* page head */
+    title: 'webpack4.x-angularjs',
+    // meta: nav.meta,
+    favicon: path.resolve(__dirname, '../assets/init/favicon-144.png'),
+    template: path.resolve(__dirname, '../index.html'),
+    minify: true,
+  }),
+];
 
-  plugins.push(
-    new HtmlWebapckPlugin({
-      /* inital page */
-      filename: 'index.html',
-      chunks: ['app'],
-      /* page head */
-      title: 'angularjs',
-      // meta: nav.meta,
-      favicon: path.resolve(__dirname, '../assets/init/favicon-144.png'),
-      template: path.join(__dirname, '../index.html'),
-      minify: true
-    })
-  )
-
-// sprites 
+// sprites
 const SpritesmithPlugin = require('webpack-spritesmith');
-const sprites = require('../config/index.js').sprites;
+const { sprites } = require('../config/index.js');
 
-for(let sprite of sprites) {
-  plugins.push(new SpritesmithPlugin({
-    src: {
-      cwd: path.resolve(__dirname, '../assets/sprites/' + sprite + '/'),
-      glob: '*.png'
-    },
-    target: {
-      image: path.resolve(__dirname, '../assets/base64/' + sprite + '-sprite.png'),
-      css: path.resolve(__dirname, '../assets/css/' + sprite + '/' + sprite + '-sprite.scss')
-    },
-    apiOptions: {
-      cssImageRef: '../../base64/' + sprite + '-sprite.png'
-    }
-  }))
-}
+plugins = sprites.reduce((acc, sprite) => acc.concat([new SpritesmithPlugin({
+  src: {
+    cwd: path.resolve(__dirname, `../assets/sprites/${sprite}/`),
+    glob: '*.png',
+  },
+  target: {
+    image: path.resolve(__dirname, `../assets/base64/${sprite}-sprite.png`),
+    css: path.resolve(__dirname, `../assets/css/${sprite}/${sprite}-sprite.scss`),
+  },
+  apiOptions: {
+    cssImageRef: `../../base64/${sprite}-sprite.png`,
+  },
+})]), plugins);
 
 module.exports = {
   entry,
-  plugins
-}
+  plugins,
+};

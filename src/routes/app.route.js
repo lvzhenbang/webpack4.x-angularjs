@@ -8,18 +8,14 @@ export const appRoute = {
   url: '',
   redirectTo: 'index',
   resolve: {
-    index: ['storageService', iss => iss.init('data/index.json', 'index')]
+    index: ['storageService', iss => iss.init('data/index.json', 'index')],
   },
   views: {
     '!$default': {
-      component: 'app'
-    }
+      component: 'app',
+    },
   },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/app.module').then(mod => $ocLazyLoad.load(mod.appModule))
-  }
-}
+};
 
 // app/contactus
 export const contactusRoute = {
@@ -28,14 +24,14 @@ export const contactusRoute = {
   url: '/contactus',
   resolve: {
     contactus: ['storageService', iss => iss.init('data/contactus.json', 'contactus')],
-    aboutus: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.aboutus )]
+    aboutus: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.aboutus)],
   },
   views: {
     app: {
-      component: 'contactus'
-    }
-  }
-}
+      component: 'contactus',
+    },
+  },
+};
 
 // app/index
 export const indexRoute = {
@@ -44,17 +40,17 @@ export const indexRoute = {
   url: '/index',
   resolve: {
     banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
-    index: ['storageService', iss => iss.init('data/index.json', 'index')]
+    index: ['storageService', iss => iss.init('data/index.json', 'index')],
   },
   views: {
     banner: {
-      component: 'banner'
+      component: 'banner',
     },
     app: {
-      component: 'index'
-    }
-  }
-}
+      component: 'index',
+    },
+  },
+};
 
 // app/newscenter
 export const newscenterRoute = {
@@ -62,17 +58,17 @@ export const newscenterRoute = {
   name: 'newscenter',
   url: '/newscenter',
   resolve: {
-    newscenter: ['storageService', iss => iss.init('data/newscenter.json', 'newscenter')]
+    newscenter: ['storageService', iss => iss.init('data/newscenter.json', 'newscenter')],
   },
   views: {
     banner: {
-      component: ''
+      component: '',
     },
     app: {
-      component: 'newscenter'
-    }
-  }
-}
+      component: 'newscenter',
+    },
+  },
+};
 
 // app/recruitment
 export const recruitmentRoute = {
@@ -80,17 +76,17 @@ export const recruitmentRoute = {
   name: 'recruitment',
   url: '/recruitment',
   resolve: {
-    recruitment: ['storageService', iss => iss.init('data/recruitment.json', 'recruitment')]
+    recruitment: ['storageService', iss => iss.init('data/recruitment.json', 'recruitment')],
   },
   views: {
     banner: {
-      component: ''
+      component: '',
     },
     app: {
-      component: 'recruitment'
-    }
-  }
-}
+      component: 'recruitment',
+    },
+  },
+};
 
 // shzr
 export const shzrRoute = {
@@ -99,22 +95,22 @@ export const shzrRoute = {
   url: '/shzr',
   redirectTo: 'shzr-block',
   resolve: {
-    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
-    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.shzr )]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then(data => data.shzr)],
   },
   views: {
     banner: {
-      component: 'banner'
+      component: 'banner',
     },
     app: {
-      component: 'shzr'
-    }
+      component: 'shzr',
+    },
   },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
-  }
-}
+  lazyLoad: (transition) => {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.default));
+  },
+};
 
 // app/styleus
 export const styleusRoute = {
@@ -122,17 +118,17 @@ export const styleusRoute = {
   name: 'styleus',
   url: '/styleus',
   resolve: {
-    styleus: ['storageService', iss => iss.init('data/styleus.json', 'styleus')]
+    styleus: ['storageService', iss => iss.init('data/styleus.json', 'styleus')],
   },
   views: {
     banner: {
-      component: ''
+      component: '',
     },
     app: {
-      component: 'styleus'
-    }
-  } 
-}
+      component: 'styleus',
+    },
+  },
+};
 
 // app/sxy
 export const sxyRoute = {
@@ -141,22 +137,22 @@ export const sxyRoute = {
   url: '/sxy',
   redirectTo: 'sxy-block',
   resolve: {
-    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
-    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.sxy )]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then(data => data.sxy)],
   },
   views: {
     banner: {
-      component: 'banner'
+      component: 'banner',
     },
     app: {
-      component: 'sxy'
-    }
+      component: 'sxy',
+    },
   },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
-  }
-}
+  lazyLoad: (transition) => {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.default));
+  },
+};
 
 // ywbk
 export const ywbkRoute = {
@@ -165,22 +161,22 @@ export const ywbkRoute = {
   url: '/ywbk',
   redirectTo: 'ywbk-block',
   resolve: {
-    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
-    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.ywbk )]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then(data => data.ywbk)],
   },
   views: {
     banner: {
-      component: 'banner'
+      component: 'banner',
     },
     app: {
-      component: 'ywbk'
-    }
+      component: 'ywbk',
+    },
   },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
-  }
-}
+  lazyLoad: (transition) => {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.default));
+  },
+};
 
 // zjsj
 export const zjsjRoute = {
@@ -189,19 +185,19 @@ export const zjsjRoute = {
   url: '/zjsj',
   redirectTo: 'zjsj-block',
   resolve: {
-    banner: ['storageService', iss => iss.init('data/index.json', 'index').then( data => data.banner )],
-    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then( data => data.zjsj )]
+    banner: ['storageService', iss => iss.init('data/index.json', 'index').then(data => data.banner)],
+    tabs: ['storageService', iss => iss.init('data/sidenav.json', 'sidenav').then(data => data.zjsj)],
   },
   views: {
     banner: {
-      component: 'banner'
+      component: 'banner',
     },
     app: {
-      component: 'zjsj'
-    }
+      component: 'zjsj',
+    },
   },
-  lazyLoad: function(transition) {
-    const $ocLazyLoad = transition.injector().get('$ocLazyLoad')
-    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.blockModule))
-  }
-}
+  lazyLoad: (transition) => {
+    const $ocLazyLoad = transition.injector().get('$ocLazyLoad');
+    return import('../modules/block.module').then(mod => $ocLazyLoad.load(mod.default));
+  },
+};

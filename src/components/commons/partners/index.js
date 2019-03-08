@@ -2,9 +2,9 @@
  * component of partners
  * by lzb
  */
-import '@css/partner/index.scss';
+import '~css/partner/index.scss';
 
-let partnersComponent = {
+export default {
   bindings: { partners: '<' },
   template: `
   <div class="sj_partner sj_wrapper">
@@ -16,7 +16,5 @@ let partnersComponent = {
       </div>
     </div>
   </div>
-  `
+  `,
 };
-
-export default partnersComponent;

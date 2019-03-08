@@ -2,9 +2,9 @@
  * component of products
  * by lzb
  */
-import '@css/product/index.scss';
+import '~css/product/index.scss';
 
-let productsComponent = {
+export default {
   bindings: { products: '<' },
   template: `
   <div class="sj_loan_product sj_wrapper">
@@ -32,7 +32,5 @@ let productsComponent = {
         </div>
     </div>
   </div>
-  `
+  `,
 };
-
-export default productsComponent;

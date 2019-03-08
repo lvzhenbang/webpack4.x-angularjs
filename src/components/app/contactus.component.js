@@ -2,12 +2,12 @@
  * component of contactus
  * by lzb
  */
-import '@css/contactus/index.scss';
+import '~css/contactus/index.scss';
 
-export const contactusComponent = {
+export default {
   bindings: {
     contactus: '<',
-    aboutus: '<'
+    aboutus: '<',
   },
   template: `
   <div id="contactus" class="sj_contactus">
@@ -48,5 +48,5 @@ export const contactusComponent = {
   </div>
 
   <aboutus aboutus="$ctrl.aboutus"></aboutus>
-  `
-}
+  `,
+};

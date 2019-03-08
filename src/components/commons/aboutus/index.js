@@ -2,12 +2,20 @@
  * component of aboutus
  * by lzb
  */
-import template from './aboutus.html';
-import '@css/aboutus/index.scss'
+import '~css/aboutus/index.scss';
 
-let aboutusComponent = {
+export default {
   bindings: { aboutus: '<' },
-  template
-};
+  template: `
+  <div class="about-us sj_wrapper">
+    <blocktitle title="$ctrl.aboutus.title"></blocktitle>
 
-export default aboutusComponent;
+    <div class="about-list">
+      <div class="about-item" ng-repeat="item in $ctrl.aboutus.list">
+        <div class="icon"></div>
+        <div class="desc">{{ item.desc }}</div>
+      </div>
+    </div>
+  </div>
+  `,
+};

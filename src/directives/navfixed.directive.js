@@ -2,10 +2,10 @@
  * route of navfixed
  * by lzb
  */
-export function navfixedDirective() {
+export default function navfixedDirective() {
   return {
     restrict: 'A',
-    link: function($scope, element) {
+    link($scope, element) {
       function navShow() {
         if (!element.hasClass('sj_nav-show') && window.pageYOffset >= 85) {
           element.addClass('sj_nav-show');
@@ -14,11 +14,11 @@ export function navfixedDirective() {
           element.removeClass('sj_nav-show');
         }
       }
-      window.addEventListener('scroll', navShow)
-      
-      $scope.$on("$destroy", function() {
-        window.removeEventListener("scroll", navShow)
-      })
-    }
-  }
+      window.addEventListener('scroll', navShow);
+
+      $scope.$on('$destroy', () => {
+        window.removeEventListener('scroll', navShow);
+      });
+    },
+  };
 }

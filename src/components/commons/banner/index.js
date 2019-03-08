@@ -2,23 +2,36 @@
  * component of banner
  * by lzb
  */
-import template from './banner.html';
-import '@css/commons/banner.scss';
+import '~css/commons/banner.scss';
 
 class BannerController {
-  constructor($scope) {}
-
-  isActive(index) {
-    return index === 0 ? true : false
+  constructor($scope) {
+    this.$scope = $scope;
+    this.isActive = index => index === 0;
   }
 }
 
-BannerController.$inject = ['$scope']
+BannerController.$inject = ['$scope'];
 
-let bannerComponent = {
-  bindings: { banner: '<'},
-  template,
-  controller: BannerController
+export default {
+  bindings: { banner: '<' },
+  template: `
+  <div class="banner">
+    <div class="carousel" carousel>
+      <div class="carousel-inner">
+        <div
+            class="carousel-item"
+            ng-repeat="(index, item) in $ctrl.banner"
+            ng-class="{active: $ctrl.isActive(index)}">
+          <a ui-sref="{{ item.href }}">
+            <img ng-src="{{ item.img }}" alt="{{ item.title }}">
+          </a>
+        </div>
+      </div>
+      <div class="carousel-control btn-prev"></div>
+      <div class="carousel-control btn-next"></div>
+    </div>
+  </div>
+  `,
+  controller: BannerController,
 };
-
-export default bannerComponent;

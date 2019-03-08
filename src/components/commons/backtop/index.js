@@ -2,11 +2,8 @@
  * component of backtop
  * by lzb
  */
-import template from './backtop.html';
-import '@css/commons/backtop.scss'
+import '~css/commons/backtop.scss';
 
-let backtopComponent = {
-  template
+export default {
+  template: '<div backtop class="back-to-top" title="返回顶部"></div>',
 };
-
-export default backtopComponent;

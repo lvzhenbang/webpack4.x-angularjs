@@ -2,23 +2,25 @@
  * directive of carousel
  * by lzb
  */
-import Carousel from '../utils/carousel'
-export function carouselDirective() {
+import Carousel from '../utils/carousel';
+
+export default function carouselDirective() {
   return {
     restrict: 'A',
-    link: function($scope, element) {
-      
-      setTimeout(function() {
-        new Carousel('.carousel', {
+    link($scope) {
+      let slide = null;
+      setTimeout(() => {
+        slide = new Carousel('.carousel', {
           timer: 5000,
           hasIndicators: true,
-          autoplay: false
-        })
-      }, 0)
-      
-      $scope.$on("$destroy", function() {
-        
-      })
-    }
-  }
+          autoplay: false,
+        });
+        slide.init();
+      }, 0);
+
+      $scope.$on('$destroy', () => {
+        slide.pause();
+      });
+    },
+  };
 }

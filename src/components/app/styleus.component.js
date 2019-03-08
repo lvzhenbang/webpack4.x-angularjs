@@ -2,24 +2,20 @@
  * component of styleus
  * by lzb
  */
-import '@css/styleus/index.scss'
+import '~css/styleus/index.scss';
 
 class StyleusController {
-  constructor(storageService) {}
-
-  itemStyle(width, height) {
-    return {
-      "width": width + 'px',
-      "height": height + 'px'
-    }
+  constructor(storageService) {
+    this.storageService = storageService;
+    this.itemStyle = (width, height) => ({ width: `${width}px`, height: `${height}px` });
   }
 }
 
-StyleusController.$inject = ['storageService']
+StyleusController.$inject = ['storageService'];
 
-export const styleusComponent = {
+export default {
   bindings: {
-    styleus: '<'
+    styleus: '<',
   },
   controller: StyleusController,
   template: `
@@ -42,5 +38,5 @@ export const styleusComponent = {
       </div>
     </div>
   </div>
-  `
-}
+  `,
+};

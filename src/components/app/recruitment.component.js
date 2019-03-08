@@ -2,23 +2,19 @@
  * component of recruitment
  * by lzb
  */
-import '@css/recruitment/index.scss'
+import '~css/recruitment/index.scss';
 
 class RecruitmentContoller {
-  constructor(storageService) { }
-
-  isActive(index) {
-    return index===0 ? true : false
-  }
-
-  detailStyle(index) {
-    return index===0 ? { 'display': 'block' } : {}
+  constructor(storageService) {
+    this.storageService = storageService;
+    this.isActive = index => index === 0;
+    this.detailStyle = index => (index === 0 ? { display: 'block' } : {});
   }
 }
 
-RecruitmentContoller.$inject = ['storageService']
+RecruitmentContoller.$inject = ['storageService'];
 
-export const recruitmentComponent = {
+export default {
   bindings: { recruitment: '<' },
   controller: RecruitmentContoller,
   template: `
@@ -81,5 +77,5 @@ export const recruitmentComponent = {
       </div>
     </div>
   </div>
-  `
-}
+  `,
+};

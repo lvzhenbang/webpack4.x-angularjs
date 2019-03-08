@@ -8,20 +8,20 @@ export const shzrBlockRoute = {
   name: 'shzr-block',
   url: '/:type',
   params: {
-    type: 'system'
+    type: 'system',
   },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/shzr.json', 'shzr')
-      .then(data => data[$transition$.params().type])
-    ]
+      .then(data => data[$transition$.params().type]),
+    ],
   },
   views: {
     block: {
-      component: 'block'
-    }
-  }
-}
+      component: 'block',
+    },
+  },
+};
 
 // sxy-block route
 export const sxyBlockRoute = {
@@ -29,40 +29,40 @@ export const sxyBlockRoute = {
   name: 'sxy-block',
   url: '/:type',
   params: {
-    type: "school"
+    type: 'school',
   },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/sxy.json', 'sxy')
-      .then(data => data[$transition$.params().type])
-    ]
+      .then(data => data[$transition$.params().type]),
+    ],
   },
   views: {
     block: {
-      component: 'block'
-    }
-  }
-}
+      component: 'block',
+    },
+  },
+};
 
 export const ywbkBlockRoute = {
   parent: 'ywbk',
   name: 'ywbk-block',
   url: '/:type',
   params: {
-    type: "finance"
+    type: 'finance',
   },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/ywbk.json', 'ywbk')
-      .then(data => data[$transition$.params().type])
-    ]
+      .then(data => data[$transition$.params().type]),
+    ],
   },
   views: {
     block: {
-      component: 'block'
-    }
-  }
-}
+      component: 'block',
+    },
+  },
+};
 
 // zjsj-block route
 export const zjsjBlockRoute = {
@@ -70,17 +70,17 @@ export const zjsjBlockRoute = {
   name: 'zjsj-block',
   url: '/:type',
   params: {
-    type: "investment"
+    type: 'investment',
   },
   resolve: {
     data: ['storageService', '$transition$', (iss, $transition$) => iss
       .init('data/zjsj.json', 'zjsj')
-      .then(data => data[$transition$.params().type])
-    ]
+      .then(data => data[$transition$.params().type]),
+    ],
   },
   views: {
     block: {
-      component: 'block'
-    }
-  }
-}
+      component: 'block',
+    },
+  },
+};

@@ -2,50 +2,41 @@
  * component of newscenter
  * by lzb
  */
-import '@css/newscenter/index.scss';
+import '~css/newscenter/index.scss';
 
 class NewscenterController {
   constructor($timeout) {
-    this.$timeout = $timeout
-  }
-
-  isActive(flag) {
-    return flag === '1' ? true : false
-  }
-
-  isReverse(index) {
-    return index % 2 === 0 ? false : true
-  }
-
-  isHide(type) {
-    return type === '1' ? false : true
+    this.$timeout = $timeout;
+    this.isActive = flag => flag === '1';
+    this.isReverse = index => index % 2 !== 0;
+    this.isHide = type => type !== '1';
   }
 
   showItem(ele, type) {
-    document.querySelectorAll('.sj_tab-item').forEach(function(item) {
-      item.classList.remove('active')
-    })
-    ele.classList.add('active')
-    let timeout = this.$timeout
-    document.querySelectorAll('.sj_new-item').forEach(function(item) {
-      if(item.getAttribute('data-type') === type) {
-        item.style.display = ""
+    document.querySelectorAll('.sj_tab-item').forEach((item) => {
+      item.classList.remove('active');
+    });
+    ele.classList.add('active');
+    const timeout = this.$timeout;
+    document.querySelectorAll('.sj_new-item').forEach((item) => {
+      if (item.getAttribute('data-type') === type) {
+        item.setAttribute('style', 'display: block');
         timeout(() => {
-          item.classList.remove('hide')
-        })
+          item.classList.remove('hide');
+        });
       } else {
-        item.classList.add('hide')
+        item.classList.add('hide');
         timeout(() => {
-          item.style.display = "none"
-        }, 200)
+          item.setAttribute('style', 'display: none');
+        }, 200);
       }
-    })
+    });
   }
 }
 
 NewscenterController.$inject = ['$timeout'];
 
-export const newscenterComponent = {
+export default {
   bindings: { newscenter: '<' },
   controller: NewscenterController,
   template: `
@@ -88,5 +79,5 @@ export const newscenterComponent = {
       </div>
     </div>
   </div>
-  `
-}
+  `,
+};

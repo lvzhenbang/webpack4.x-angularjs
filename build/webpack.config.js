@@ -1,49 +1,52 @@
-'use strict';
-
+/**
+ * webpack.config.js
+ * by lzb
+ */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopywebpackPlugin = require('copy-webpack-plugin');
 const Workbox = require('workbox-webpack-plugin');
 
-const multipage = require('./multipage.config.js');
+const { entry, plugins } = require('./multipage.config.js');
 const Module = require('./module.config.js');
-const host = require('../config').host;
-
-let entry = multipage.entry,
-    plugins = multipage.plugins
+const { host } = require('../config');
 
 module.exports = (mode) => {
-  let isDev = mode !== 'production'
-  let basePlugin = [
+  const isDev = mode !== 'production';
+
+  const basePlugin = [
+    new CopywebpackPlugin([{
+      from: path.join(__dirname, '../assets', 'init'),
+      to: path.join(__dirname, '..', 'dist'),
+    }]),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].[chunkhash].css'
+      filename: 'assets/css/[name].[chunkhash].css',
     }),
     new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: isDev ? {safe: true} :isDev ? {safe: true} : {
+      cssProcessorOptions: isDev ? { safe: true } : {
         map: {
-          inline: false
+          inline: false,
         },
-        safe: true
-      }
+        safe: true,
+      },
     }),
     new Workbox.GenerateSW({
       importWorkboxFrom: 'local',
       clientsClaim: true,
-      skipWaiting: true
-    })
-  ].concat(plugins)
-
+      skipWaiting: true,
+    }),
+  ].concat(plugins);
   return {
-    entry: entry,
-    mode: mode,
+    entry,
+    mode,
     output: {
       path: path.resolve(__dirname, '../dist/'),
       filename: isDev ? 'assets/js/[name].js' : 'assets/js/[name].[chunkhash].js',
-      publicPath: isDev ? host.devUrl : host.deployUrl
+      publicPath: isDev ? host.devUrl : host.deployUrl,
     },
     devServer: {
-      open: true
+      open: true,
     },
     optimization: {
       splitChunks: {
@@ -53,45 +56,40 @@ module.exports = (mode) => {
             name: 'common',
             minChunks: 2,
             maxInitialRequests: 5,
-            minSize: 0
+            minSize: 0,
           },
           vendor: {
-            name: "vendor",
+            name: 'vendor',
             test: /node_modules/,
             priority: 10,
-            enforce: true
-          }
-        }
-      }
+            enforce: true,
+          },
+        },
+      },
     },
     externals: {
       BMap: 'BMap',
-      window: 'window'
+      window: 'window',
     },
     resolve: {
       alias: {
-        '@': path.join(__dirname, '..'),
-        '@src': path.join(__dirname, '..', 'src'),
-        '@css': path.join(__dirname, '..', 'assets', 'css'),
-        '@img': path.join(__dirname, '..', 'assets', 'imgs'),
-        // '@font': path.join(__dirname, '..', 'assets', 'fonts'),
-        '@data': path.join(__dirname, '..', 'src', 'data'),
-        '@utils': path.join(__dirname, '..', 'src', 'utils')
-      }
-    }, 
+        '~': path.join(__dirname, '..'),
+        '~src': path.join(__dirname, '..', 'src'),
+        '~css': path.join(__dirname, '..', 'assets', 'css'),
+        '~utils': path.join(__dirname, '..', 'src', 'utils'),
+      },
+    },
     module: Module(isDev),
     plugins: isDev ? basePlugin : basePlugin.concat([
       new CopywebpackPlugin([{
-        from: path.join(__dirname, '../assets', 'init'),
-        to: path.join(__dirname, '..', 'dist')
-      }, {
         from: path.join(__dirname, '../assets', 'imgs'),
-        to: path.join(__dirname, '../dist/assets', 'imgs')
-      }, {
+        to: path.join(__dirname, '../dist/assets', 'imgs'),
+      },
+      {
         from: path.join(__dirname, '..', 'data'),
-        to: path.join(__dirname, '../dist', 'data')
-      }])
+        to: path.join(__dirname, '../dist', 'data'),
+      }]),
     ]),
-    devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map'
-  }
-}
+    devtool: isDev ? 'cheap-module-eval-source-map' : 'cheap-module-source-map',
+  };
+};
