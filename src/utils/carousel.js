@@ -117,7 +117,6 @@ class Carousel {
   destory() {
     this.pause();
     this.carousel.removeChild(this.carousel.querySelector('ol'));
-    this.carousel.removeChild(this.carousel.querySelectorAll('button'));
   }
 
   init() {
