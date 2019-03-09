@@ -114,6 +114,12 @@ class Carousel {
     this.carousel.appendChild(indicators);
   }
 
+  destory() {
+    this.pause();
+    this.carousel.removeChild(this.carousel.querySelector('ol'));
+    this.carousel.removeChild(this.carousel.querySelectorAll('button'));
+  }
+
   init() {
     if (this.options.hasIndicators) this.addIndicators();
 

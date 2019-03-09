@@ -13,13 +13,13 @@ export default function carouselDirective() {
         slide = new Carousel('.carousel', {
           timer: 5000,
           hasIndicators: true,
-          autoplay: false,
+          autoplay: true,
         });
         slide.init();
       }, 0);
 
       $scope.$on('$destroy', () => {
-        slide.pause();
+        slide.destory();
       });
     },
   };
