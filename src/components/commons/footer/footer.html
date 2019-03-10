@@ -1,0 +1,42 @@
+<div class="sj_footer">
+  <div class="sj_wrapper">
+    <div class="sj_map-box">
+      <ul class="sj_map-nav">
+        <li
+          class="sj_map-item sj_arrow-more"
+          ng-repeat="item in $ctrl.nav"
+          ng-click="$ctrl.dropdown($event)">
+          <span></span>
+          <a
+            ui-sref="{{ item.href }}"
+            class="sj_title"
+            type="{{ item.type }}"> {{ item.text }} </a>
+          <ul class="sj_map-menu" ng-if="item.subMap">
+            <li ng-repeat="subItem in item.subMap">
+              <a
+                ui-sref="{{ subItem.href }}"
+                type="{{ subItem.type }}"
+                ng-click="$ctrl.scrollspy($event)"> {{ subItem.text }} </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- user service -->
+      <div class="sj_user_service">
+        <span>在线客服：{{ $ctrl.service.phone }}</span>
+        <span>工作时间：{{ $ctrl.service.worktime }}</span>
+      </div>
+    
+      <!-- qrcode -->
+      <div class="sj_qrcode">
+        <img class="lazy" src="{{ $ctrl.qrcode.img }}" alt="{{ $ctrl.qrcode.alt }}">
+        <div> {{ $ctrl.qrcode.text }} </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- copyright -->
+  <div class="sj_copyright">
+    <p>京ICP备15002298号&nbsp;京公网安备11010102001651号</p>
+  </div>
+</div>      

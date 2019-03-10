@@ -1,0 +1,160 @@
+@import "~css/path.scss";
+
+.sj_recruitment {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 31%;
+}
+
+.sj_recruitment>img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.sj_recruitment .sj_second-title span:nth-of-type(1) {
+  color: #1953c9;
+}
+
+.sj_recruitment .sj_wrapper {
+  background: #fff;
+}
+
+.shadow {
+  position: relative
+}
+
+.shadow::before,
+.shadow::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  width: 10px;
+  height: 260px;
+}
+
+.shadow::before {
+  left: 4px;
+  box-shadow: -10px 0 16px rgba(216, 216, 216, .8);
+  transform: rotate(-3deg);
+}
+
+.shadow::after {
+  right: 4px;
+  box-shadow: 10px 0 16px rgba(216, 216, 216, .8);
+  transform: rotate(3deg);
+}
+
+.sj_recruitment .sj_second-title {
+  background: url('#{$img-base64}/sj-r-b.png') repeat-x;
+}
+
+.sj_recruitment .sj_ct-title span:nth-of-type(1) {
+  color: #1953c9;
+}
+
+.sj_table {
+  padding: 0 40px;
+}
+
+.sj_table-header {
+  display: flex;
+  background: #515394;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.sj-table-tt {
+  display: flex;
+}
+
+.sj_table-th,
+.sj_table-td {
+  flex-grow: 1;
+}
+
+.sj_table-th {
+  padding: 8px 16px;
+}
+
+.sj_table-td {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  color: #666666;
+}
+
+.sj_table-th span {
+  display: block;
+}
+
+.sj_table-th span:first-child {
+  font-size: 18px;
+}
+
+.sj_table-th span:last-child {
+  font-size: 14px;
+}
+
+.sj_table-tr {
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.sj_table-tr:hover {
+  border-color: #eaeaea;
+  box-shadow: 0 0 2px #eaeaea;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.sj_table-tr:nth-of-type(even) {
+  background: #eaeaea;
+  cursor: pointer;
+}
+
+.sj_table-details {
+  display: none;
+  padding: 1px 16px;
+  background: #e9f3ff;
+  font-size: 14px;
+  color: #666666;
+}
+
+.sj_recruit-item {
+  margin: 16px 0;
+}
+
+.sj_recruit-item:nth-last-of-type() {
+  margin-top: 32px;
+}
+
+.sj_recruit-item.sj_horizontal div {
+  display: inline-block;
+}
+
+
+@media(min-width: 992px) {
+  .sj_recruitment .sj_wrapper {
+    margin-top: -5%;
+  }
+}
+
+@media(max-width: 576px) {
+  .sj_recruitment .sj_table {
+    padding: 0;
+  }
+
+  .sj_recruitment .sj_table-header,
+  .sj_recruitment .sj-table-tt {
+    flex-direction: column;
+  }
+}

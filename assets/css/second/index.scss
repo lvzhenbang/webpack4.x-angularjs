@@ -1,0 +1,229 @@
+.tab-content {
+  padding: 10px;
+  margin-top: 40px;
+  text-align: left;
+  font-size: 16px;
+  color: #666;
+}
+
+.tab-content p {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+@media(max-width: 991px) {
+  .tab-content img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sj_i-one {
+  color: #1853cb;
+}
+
+.sj_i-two {
+  color: #666666;
+}
+
+/* speech */
+.sj_speech {
+  padding: 0 20px;
+}
+
+.sj_speech p {
+  font-family: GB, Adobe;
+}
+
+.sj_speech p:nth-of-type(1) {
+  font-weight: bold;
+  color: #666666;
+  text-indent: 0;
+}
+
+.sj_speech p:nth-last-of-type(1) {
+  text-align: right;
+}
+
+.sj_speech img {
+  float: right;
+  width: 314px;
+  height: 390px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+/* culture */
+.sj_culture ul {
+  padding-left: 0;
+  text-align: center;
+}
+
+.sj_culture li {
+  list-style: none;
+  margin-bottom: 80px;
+}
+
+.sj_culture li .sj_i-one {
+  font-size: 32px;
+  line-height: 1.0;
+}
+
+.sj_culture li .sj_i-two {
+  margin-top: 24px;
+  font-size: 22px;
+  line-height: 1.0;
+}
+
+/* strategy */
+.sj_strategy .sj_i-two p {
+  text-indent: 1em;
+}
+
+
+/* team */
+
+.sj_card {
+  display: flex;
+}
+
+.sj_card img {
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 280px;
+  height: 340px;
+}
+
+.sj_card .sj_team-desc {
+  flex-grow: 1;
+  font-size: 22px;
+}
+
+.sj_card .sj_team-desc p {
+  text-indent: 0;
+  line-height: 1.5;
+  margin: 14px 0;
+}
+
+.sj_card .sj_team-desc p:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.sj_card .sj_team-desc p:nth-last-of-type(1) {
+  margin-bottom: 0;
+}
+
+.sj_card p.sj_team-name {
+  color: #155ad1;
+}
+
+@media(min-width: 577px) {
+  .sj_team,
+  .sj_celebrites {
+    padding: 0 62px;
+  }
+
+  .sj_card {
+    align-items: center;
+    margin-bottom: 78px;
+  }
+
+  .sj_team-desc {
+    margin-left: 20px;
+  }
+}
+
+@media(max-width: 576px) {
+  .sj_card {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+    border: 1px dotted #ccc;  
+  }
+
+  .sj_team img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .sj_card .sj_team-desc {
+    padding: 20px;
+    font-size: 16px;
+    text-align: left;
+    background: #ccc;
+    border-radius: 4px;
+  }
+}
+
+.sj_link {
+  margin: 60px 0;
+  list-style: none;
+}
+
+.sj_link span {
+  display: block;
+  font-size: 22px;
+  color: #666666;
+  text-align: center;
+}
+
+.sj_link a {
+  display: block;
+  font-size: 22px;
+  color: #1053c4;
+  text-align: center;
+}
+
+.sj_dtitle {
+  margin: 60px 0;
+  list-style: none;
+}
+
+.sj_dtitle span {
+  display: block;
+  margin-top: 20px;
+  font-size: 22px;
+  color: #666666;
+  text-align: center;
+}
+
+.sj_dtitle span:nth-of-type(1) {
+  color: #1053c4;
+}
+
+.sj_ywbk img,
+.sj_school img {
+  display: block;
+  margin: 40px auto;
+  border: none;
+}
+
+.sj_ywbk .sj_img-info,
+.sj_school .sj_img-info {
+  margin: 18px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.sj_ywbk table {
+  margin: 0 auto;
+}
+
+.sj_yw_item table th,
+.sj_yw_item table td {
+  width: 268px;
+  height: 48px;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #252525;
+  border: 1px solid #afafaf;
+}
+
+/* culture */
+.sj_ywbk p span {
+  display: inline-block;
+  font-weight: bold;
+}

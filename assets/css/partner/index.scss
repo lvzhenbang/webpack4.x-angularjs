@@ -1,0 +1,29 @@
+/* partner */
+.sj_partner-list {
+  display: flex;
+  padding-left: 0;
+}
+
+@media(min-width: 992px) {
+  .sj_partner-list {
+    flex-flow: row wrap;
+    align-content: space-between;
+  }
+}
+
+@media(max-width: 991px) {
+  .sj_partner-list {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+.sj_partner-item {
+  list-style: none;
+  padding: 24px 0;
+}
+
+.sj_partner-item img {
+  width: 288px;
+  height: 96px;
+}

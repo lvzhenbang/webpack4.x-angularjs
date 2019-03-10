@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>angularjs</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    .spinner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, .7);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pacman { position: relative; }
+
+    .pacman>div:first-of-type,
+    .pacman>div:nth-of-type(2) {
+      width: 0;
+      height: 0;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-radius: 25px;
+
+      position: relative;
+      left: -30px;
+    }
+
+    @keyframes rotate_pacman_half_up {
+      0%, 100% {  transform: rotate(270deg); }
+      50% { transform: rotate(360deg); }
+    }
+
+    @keyframes rotate_pacman_half_down {
+      0%, 100% { transform: rotate(90deg); }
+      50% { transform: rotate(0); }
+    }
+
+    @keyframes pacman-balls {
+      0% { opacity: 1; }
+      75% {  opacity: 0.7; }
+      76% { opacity: 0.1; }
+      100% { opacity: 0.1; transform: translate(-100px, -6.25px); }
+    }
+
+    .pacman>div:nth-child(3) { animation: pacman-balls 1s -.66s infinite linear; }
+
+    .pacman>div:nth-child(4) { animation: pacman-balls 1s -.33s infinite linear; }
+
+    .pacman>div:nth-child(5) { animation: pacman-balls 1s 0s infinite linear; }
+
+    .pacman>div:first-of-type { animation: rotate_pacman_half_up .5s 0s infinite; }
+
+    .pacman>div:nth-child(2) { margin-top: -50px; animation: rotate_pacman_half_down .5s 0s infinite; }
+
+    .pacman>div:nth-child(3),
+    .pacman>div:nth-child(4),
+    .pacman>div:nth-child(5),
+    .pacman>div:nth-child(6) {
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      background-color: #fff;
+
+      position: absolute;
+      top: 25px;
+      left: 70px;
+
+      transform: translate(0,-6.25px);
+    }
+  </style>
+</head>
+<body ng-app="init" ng-strict-di>
+  <div ui-view>
+    <div class="spinner">
+      <div class="pacman">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=zZ1jDRxcKuPUEX4Ar77rxaLqhk4v6RAj&s=1"></script>
+</body>
+</html>

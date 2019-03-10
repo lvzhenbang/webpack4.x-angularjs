@@ -1,0 +1,47 @@
+@import '~css/utils/button.scss';
+@import '~css/utils/input.scss';
+
+.box {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 300px;
+  font-size: 1.2em;
+}
+
+.form-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.8em;
+}
+
+.form-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.form-message {
+  color: #f45454;
+}
+
+.form-content .text-input {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.form-message,
+.form-content .btn {
+  width: calc(100% - 1em);
+  margin-left: 0.5em;
+  margin-left: 0.5em;
+}
+
+

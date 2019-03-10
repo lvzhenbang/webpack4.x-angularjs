@@ -1,0 +1,25 @@
+{
+  "presets": [
+      [
+          "@babel/preset-env",
+          {
+              "targets": {
+                  "chrome": "58",
+                  "ie": "8"
+              }
+          }
+      ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": true,
+        "corejs": 2,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
