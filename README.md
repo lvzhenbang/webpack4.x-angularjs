@@ -4,7 +4,9 @@
 
 可以快速，方便的构建一个对页面的企业站或个人博客。
 
-注：多页面应用，可参考[webpack4.x-multi-page](https://github.com/lvzhenbang/webpack4.x-multi-page)
+注：多页面应用，可参考[` webpack4.x-multi-page `](https://github.com/lvzhenbang/webpack4.x-multi-page)。
+
+注2：为 `新闻中心` & `联系我们` & `人才招聘` 3个模块添加验证功能。
 
 ## 安装项目所需依赖
 
