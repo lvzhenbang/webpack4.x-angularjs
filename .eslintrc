@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./build/webpack.config.js"
+      }
+    }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}

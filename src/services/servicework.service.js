@@ -4,7 +4,6 @@
  */
 export class serviceWorker {
   constructor() {
-    this.registerWorker = window.registerWorker;
     this.check = () => {
       if ('serviceWorker' in window.navigator) return true;
       return false;
