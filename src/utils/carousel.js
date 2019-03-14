@@ -22,14 +22,14 @@ class Carousel {
     this.getIndex = (items, element) => [...items].indexOf(element);
     this.getNextIndex = (items, element, direction, activeIndex) => {
       if (element) {
-        return this.getIndex(this.items, element);
+        return this.getIndex(items, element);
       }
 
       if (direction === 'left') {
-        return (activeIndex + 1) % this.items.length;
+        return (activeIndex + 1) % items.length;
       }
 
-      if (this.items.length - 1 === -1) {
+      if (items.length - 1 === -1) {
         return this.items.length - 1;
       }
 
