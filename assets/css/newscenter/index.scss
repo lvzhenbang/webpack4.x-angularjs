@@ -50,12 +50,12 @@
   transform: scale(0)
 }
 
-.sj_new-item>a,
-.sj_new-item>.sj_new-content {
+.sj_news-center .sj_new-item>a,
+.sj_news-center .sj_new-item>.sj_new-content {
   width: 50%;
 }
 
-.sj_new-item>a {
+.sj_news-center .sj_new-item>a {
   display: block;
   text-decoration: none;
   cursor: pointer;
@@ -97,7 +97,7 @@
   flex-direction: row-reverse;
 }
 
-.sj_new-item.reverse .sj_new-content {
+.sj_news-center .sj_new-item.reverse .sj_new-content {
   position: relative;
 
   border-right: 4px solid red;
