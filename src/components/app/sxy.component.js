@@ -44,6 +44,7 @@ export default {
               ng-repeat="(index, item) in $ctrl.tabs.subtabs"
               ng-class="{ active: isActive(index) }"
               ui-sref="sxy-block({type: item.type})"
+              ui-sref-active="active"
               ng-click="$ctrl.touchMove($event)">
               <div> {{ item.cn_name }} </div>
               <div> {{ item.en_name }} </div>
