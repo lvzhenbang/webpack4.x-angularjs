@@ -8,6 +8,11 @@
 
 注2：为 `新闻中心` & `联系我们` & `人才招聘` 3个模块添加验证功能。
 
+相关项目：
+
+* [webpack4.x-angular](https://github.com/lvzhenbang/webpack4.x-multi-page) for `angular`。
+* [webpack4.x-angularjs](https://github.com/lvzhenbang/webpack4.x-angularjs) for `angular.js`. [demo](https://lvzhenbang.github.io/webpack4.x-angularjs/dist/#/index)。
+
 ## 安装项目所需依赖
 
 ```
