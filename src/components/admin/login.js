@@ -6,58 +6,75 @@ import '~css/commons/login.scss';
 
 class loginController {
   constructor(authService, $state) {
+    this.authService = authService;
+    this.$state = $state;
+
     this.loginInfo = {
       username: '',
       password: '',
     };
-
-    this.authService = authService;
-    this.$state = $state;
-    this.clickAble = false;
+    this.disableClick = true;
+    this.hideError = true;
+    this.errorTitle = '';
+    this.errorBody = '';
+    this.loginState = {
+      password: false,
+      username: false,
+    };
   }
 
   // 实际开发中这样做不正确，这里只是为了演示
   login() {
-    // only login-component self to check
-    // if (!this.check()) return;
-
-    this.clickAble = true;
-
     this
       // requset server to check
       .authService
       .auth(this.loginInfo)
       // fetch server error
-      .then((errorMessage) => {
-        this.errorMessage = errorMessage;
-      })
-      // $state.go() depend on this.tState
       .then(() => {
-        this.redirectTo();
+        if (this.authService.isLogin) {
+          this.redirectTo();
+        } else {
+          this.hideError = false;
+          this.setError(this.authService.errorMessage);
+        }
       })
       // catch unexcepted error
       .catch((error) => {
-        this.errorMessage = error;
+        this.hideError = false;
+        this.setError(`错误-${error}`);
       })
       .finally(() => {
-        this.clickAble = false;
+        this.disableClick = false;
       });
   }
 
   check(type) {
     if (type && this.loginInfo[type].trim().length <= 0) {
-      this.errorMessage = `验证错误-${type}不能为空！`;
-      return false;
+      this.hideError = false;
+      this.loginState[type] = false;
+      this.setError(`${type}验证错误-${type}不能为空！`);
     }
 
     if (this.loginInfo[type].trim().length >= 3) {
-      this.errorMessage = `验证通过-${type}的长度已满足至少3位的要求。`;
+      this.hideError = false;
+      this.loginState[type] = true;
+      this.setError(`${type}验证通过-${type}的长度已满足至少3位的要求。`);
     } else {
-      this.errorMessage = `验证错误-${type}的长度至少需要3位！`;
-      return false;
+      this.hideError = false;
+      this.loginState[type] = false;
+      this.setError(`${type}验证错误-${type}的长度至少需要3位！`);
     }
 
-    return true;
+    if (this.loginState.password && this.loginState.username) {
+      this.setError(`验证通过-${type}用户名和密码输入合法。`);
+      this.disableClick = false;
+    } else {
+      this.disableClick = true;
+    }
+  }
+
+  setError(message) {
+    [this.errorTitle, this.errorBody] = message.split('-');
   }
 
   redirectTo() {
@@ -83,9 +100,9 @@ export default {
         <img src="assets/init/favicon-144.png"/>
         <h3> webpack-angularjs </h3>
       </div>
-      <p class="form-message" ng-show="$ctrl.errorMessage">
-        <strong>{{ $ctrl.errorMessage.split('-')[0] }} ：</strong>
-        <i>{{ $ctrl.errorMessage.split('-')[1] }}</i>
+      <p class="form-message" ng-hide="$ctrl.hideError">
+        <strong>{{ $ctrl.errorTitle }} ：</strong>
+        <i>{{ $ctrl.errorBody }}</i>
       </p>
       <div class="form-content">
         <div class="text-input">
@@ -96,7 +113,7 @@ export default {
           <label for="password">密码：</label>
           <input type="password" name="password" placeholder="请输入密码" ng-keyup="$ctrl.check('password')" ng-model="$ctrl.loginInfo.password">
         </div>
-        <button class="btn" type="button" ng-click="$ctrl.login()" ng-disabled="$ctrl.clickAble"> 登录 </button>
+        <button class="btn" type="button" ng-click="$ctrl.login()" ng-disabled="$ctrl.disableClick"> 登录 </button>
       </div>
     </div>
   </div>
