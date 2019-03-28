@@ -10,7 +10,7 @@
 
 相关项目：
 
-* [webpack4.x-angular](https://github.com/lvzhenbang/webpack4.x-angular) for `angular`。
+* [webpack4.x-angular](https://github.com/lvzhenbang/webpack4.x-angular) for `angular`。[demo](https://lvzhenbang.github.io/webpack-angular/dist/)
 * [webpack4.x-angularjs](https://github.com/lvzhenbang/webpack4.x-angularjs) for `angular.js`. [demo](https://lvzhenbang.github.io/webpack4.x-angularjs/dist/#/index)。
 
 ## 安装项目所需依赖
