@@ -29,7 +29,7 @@ class Carousel {
         return (activeIndex + 1) % items.length;
       }
 
-      if (items.length - 1 === -1) {
+      if (this.activeIndex - 1 === -1) {
         return this.items.length - 1;
       }
 
