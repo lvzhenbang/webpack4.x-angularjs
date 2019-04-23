@@ -23,7 +23,7 @@ async function optizieImg(name) {
     },
   );
 
-  console.log(`${name} : 图片优化完成！`);
+  window.console.log(`${name} : 图片优化完成！`);
 }
 
 dir.forEach((name) => {

@@ -3,5 +3,6 @@ module.exports = {
     autoprefixer: {
       browsers: ['> 0.14%'],
     },
+    cssnano: {}
   },
 };

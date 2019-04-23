@@ -4,7 +4,6 @@
  */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopywebpackPlugin = require('copy-webpack-plugin');
 const Workbox = require('workbox-webpack-plugin');
 
@@ -22,14 +21,6 @@ module.exports = (mode) => {
     }]),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[chunkhash].css',
-    }),
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: isDev ? { safe: true } : {
-        map: {
-          inline: false,
-        },
-        safe: true,
-      },
     }),
     new Workbox.GenerateSW({
       importWorkboxFrom: 'local',
